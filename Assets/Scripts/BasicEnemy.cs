@@ -13,7 +13,12 @@ public class BasicEnemy : MonoBehaviour {
     transform.position += transform.forward * Time.deltaTime;
   }
 
-  private void OnCollisionEnter(Collision collision) {
-    Debug.Log("Collided");
+  private void OnTriggerEnter(Collider other) {
+    if (other.tag == "Planet") {
+      GameManager.Instance().Damage(1);
+    } else if(other.tag == "Player Bullets") {
+      GameManager.Instance().enemyList.Remove(this);
+      Destroy(gameObject);
+    }
   }
 }
