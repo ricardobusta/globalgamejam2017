@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour {
     if (playerHealth > 0) {
       playerHealth -= dmg;
       playerHealthText.text = playerHealth.ToString();
-      shieldRenderer.material.SetFloat("_Health", (float)playerHealth / (float)playerMaxHealth);
+      shieldRenderer.material.SetFloat("_CrackedIntensity", 1-((float)playerHealth / (float)playerMaxHealth));
     } else {
       gameOver = true;
       StartCoroutine(ShowGameOver());

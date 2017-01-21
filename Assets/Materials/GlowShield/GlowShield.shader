@@ -14,9 +14,9 @@ Shader "GGJ2017/GlowShield"
 	Properties
 	{
 		_MainTex ("Hexagon", 2D) = "white" {}
-		_ColorHealthy("Color Healthy", Color) = (0, 0, 0, 0)
-		_ColorDamaged("Color Damaged", Color) = (0, 0, 0, 0)
-		_Health("Health", Range(0, 1)) = 0.5
+		_HealthyColor("Healthy Color", Color) = (0, 0, 1, 0)
+		_MiddleColor("Middle Color", Color) = (1, 1, 0, 0)
+		_DamagedColor("Damaged Color", Color) = (1, 0, 0, 0)
 		_CrackedTex("Crackes", 2D) = "white" {}
 		_CrackedIntensity("Cracks Intensity", Range(0, 1)) = 0.5
 		_CrackedColor("Cracks Color", Color) = (0.8, 0.8, 0, 0)
@@ -86,9 +86,9 @@ Shader "GGJ2017/GlowShield"
 			}
 			
 			sampler2D _CameraDepthNormalsTexture;
-			fixed4 _ColorHealthy;
-			fixed4 _ColorDamaged;
-			fixed _Health;
+			fixed4 _HealthyColor;
+			fixed4 _MiddleColor;
+			fixed4 _DamagedColor;
 			fixed _CrackedIntensity;
 			fixed4 _CrackedColor;
 
@@ -103,7 +103,9 @@ Shader "GGJ2017/GlowShield"
 				mainTex.r *= triWave(_Time.x * 5, abs(i.objectPos.y) * 2, -0.7) * 6;
 				// I ended up saturaing the rim calculation because negative values caused weird artifacts
 				mainTex.g *= saturate(rim) * (sin(_Time.z + mainTex.b * 5) + 1);
-				fixed4 _Color = (_ColorHealthy*_Health + _ColorDamaged*(1 - _Health));
+				fixed4 _Color1 = fixed4(lerp(_HealthyColor, _MiddleColor,_CrackedIntensity));
+				fixed4 _Color2 = fixed4(lerp(_MiddleColor, _DamagedColor, _CrackedIntensity));
+				fixed4 _Color = fixed4(lerp(_Color1, _Color2, _CrackedIntensity));
 				return mainTex.r * _Color + mainTex.g * _Color;
 			}
 
@@ -119,13 +121,19 @@ Shader "GGJ2017/GlowShield"
 				float northPole = (i.objectPos.y - 0.45) * 20;
 				float glow = max(max(intersect, rim), northPole);
 
-				fixed4 _Color = (_ColorHealthy*_Health + _ColorDamaged*(1 - _Health));
+				fixed4 _Color1 = fixed4(lerp(_HealthyColor, _MiddleColor, _CrackedIntensity));
+				fixed4 _Color2 = fixed4(lerp(_MiddleColor, _DamagedColor, _CrackedIntensity));
+				fixed4 _Color = fixed4(lerp(_Color1, _Color2, _CrackedIntensity));
 				fixed4 glowColor = fixed4(lerp(_Color.rgb, fixed3(1, 1, 1), pow(glow, 4)), 1);
 				
 				fixed4 hexes = texColor(i, rim);
-				fixed4 cracks = tex2D(_CrackedTex, i.crackedUV) * _CrackedColor;
-				fixed4 crackWave = cracks * triWave(_Time.x * 5, abs(i.objectPos.y) * 2, -0.7) * 6;
-				fixed4 crackFinal = (0.2 * crackWave) * _CrackedIntensity;
+				fixed4 cracksAdd = tex2D(_CrackedTex, i.crackedUV);
+				fixed4 cracksSub = (2 * cracksAdd - 1) * _CrackedIntensity;
+				fixed4 cracksColor = cracksAdd * _CrackedColor * _CrackedIntensity;
+				//fixed4 cracks = ( 2*tex2D(_CrackedTex, i.crackedUV) - 1) * _CrackedColor;
+				//cracks *= _CrackedIntensity;
+				fixed4 crackWave = cracksAdd * _CrackedIntensity * triWave(_Time.x * 5, abs(i.objectPos.y) * 2, -0.7) * 6;
+				fixed4 crackFinal = 0.5* cracksColor + crackWave + 0.2*cracksSub;
 
 				fixed4 col = _Color * _Color.a + glowColor * glow + hexes + crackFinal;
 				return col;

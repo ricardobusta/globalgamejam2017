@@ -18,7 +18,7 @@ Material:
     - first:
         name: _CrackedTex
       second:
-        m_Texture: {fileID: 2800000, guid: 8f6077d5df4c70b408c59f693bcd0536, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3f6afe8479cd51f48beb670e89f5f7e9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -30,20 +30,20 @@ Material:
     m_Floats:
     - first:
         name: _CrackedIntensity
-      second: 1
-    - first:
-        name: _Health
-      second: 0.5
+      second: 0
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 0, b: 0, a: 0.197}
-    - first:
-        name: _ColorDamaged
-      second: {r: 0, g: 0, b: 0, a: 0}
-    - first:
-        name: _ColorHealthy
-      second: {r: 0, g: 1, b: 0, a: 0.566}
+      second: {r: 0.23220083, g: 0.8310345, b: 0, a: 0.11764706}
     - first:
         name: _CrackedColor
+      second: {r: 1, g: 1, b: 1, a: 0}
+    - first:
+        name: _DamagedColor
       second: {r: 1, g: 0, b: 0, a: 0}
+    - first:
+        name: _HealthyColor
+      second: {r: 0.058823466, g: 0.547, b: 0, a: 0.134}
+    - first:
+        name: _MiddleColor
+      second: {r: 1, g: 1, b: 0, a: 0}

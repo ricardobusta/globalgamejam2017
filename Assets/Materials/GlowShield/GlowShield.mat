@@ -10,7 +10,7 @@ Material:
   m_Shader: {fileID: 4800000, guid: 94e3bb0247185f842a5153fe0cd6ef74, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -24,9 +24,9 @@ Material:
     - first:
         name: _CrackedTex
       second:
-        m_Texture: {fileID: 2800000, guid: 8f6077d5df4c70b408c59f693bcd0536, type: 3}
-        m_Scale: {x: 5, y: 5}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 3f6afe8479cd51f48beb670e89f5f7e9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 1.6, y: -0.07}
     - first:
         name: _DetailAlbedoMap
       second:
@@ -81,7 +81,7 @@ Material:
       second: 1
     - first:
         name: _CrackedIntensity
-      second: 1
+      second: 0
     - first:
         name: _Cutoff
       second: 0.5
@@ -99,9 +99,6 @@ Material:
       second: 0.5
     - first:
         name: _GlossyReflections
-      second: 1
-    - first:
-        name: _Health
       second: 1
     - first:
         name: _Metallic
@@ -133,16 +130,19 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.0039807344, g: 0.30429175, b: 0.54137933, a: 0.341}
-    - first:
-        name: _ColorDamaged
-      second: {r: 0.5965518, g: 0, b: 0, a: 0.334}
-    - first:
-        name: _ColorHealthy
-      second: {r: 0, g: 0.5376243, b: 0.5758621, a: 0.247}
+      second: {r: 0.2324827, g: 0.3345185, b: 0.63235295, a: 0}
     - first:
         name: _CrackedColor
-      second: {r: 0.03676468, g: 0.78752166, b: 1, a: 0.991}
+      second: {r: 1, g: 1, b: 1, a: 0}
+    - first:
+        name: _DamagedColor
+      second: {r: 0.9413793, g: 0, b: 0, a: 0.228}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _HealthyColor
+      second: {r: 0.022058845, g: 0.913711, b: 1, a: 0.134}
+    - first:
+        name: _MiddleColor
+      second: {r: 0.6323528, g: 0, b: 1, a: 0.297}

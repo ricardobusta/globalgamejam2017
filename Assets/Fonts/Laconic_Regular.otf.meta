@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 3e5b256a3e2cc8e4990a9aeabdd422db
+timeCreated: 1485033892
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Laconic
+  fontNames:
+  - Laconic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
