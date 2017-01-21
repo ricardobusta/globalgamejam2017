@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
+  public Camera camera;
   Quaternion targetRotation;
 
   public GameObject player;
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour {
   public Bullet bulletprefab;
   List<Bullet> playerBullets = new List<Bullet>();
 
-  bool gameOver = false;
+  bool gameOver;
 
   public static GameManager Instance() {
     if (_instance == null) {
@@ -51,6 +52,8 @@ public class GameManager : MonoBehaviour {
       b.gameObject.SetActive(false);
       playerBullets.Add(b);
     }
+    gameOver = true;
+    StartCoroutine(StartSequence());
   }
 
   void Update() {
@@ -74,6 +77,17 @@ public class GameManager : MonoBehaviour {
     foreach (Bullet b in playerBullets) {
       b.Handle();
     }
+  }
+
+  IEnumerator StartSequence() {
+    float i = 0;
+    while (i < 1) {
+      i += Time.deltaTime;
+      camera.orthographicSize = Mathf.Lerp(5.0f, 0.7f, Mathf.Sin(i*Mathf.PI/2));
+      yield return new WaitForEndOfFrame();
+    }
+    camera.orthographicSize = 0.7f;
+    gameOver = false;
   }
 
   float AngleSign(Vector2 v1, Vector2 v2) {
@@ -103,7 +117,6 @@ public class GameManager : MonoBehaviour {
 
   public void PlayerShoot() {
     if (currentShootCooldown <= 0) {
-      Debug.Log("Pew");
       currentShootCooldown = shootCooldown;
       Bullet bullet = null;
       foreach (Bullet o in playerBullets) {

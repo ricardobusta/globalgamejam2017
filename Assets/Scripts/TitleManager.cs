@@ -7,10 +7,11 @@ public class TitleManager : MonoBehaviour {
 
   public Camera camera;
 
-  public Vector3 titlePosition;
-  public Vector3 creditsPosition;
-  public Vector3 scorePosition;
-  public Vector3 transitionPosition;
+  public Transform titlePosition;
+  public Transform creditsPosition;
+  public Transform scorePosition;
+  public Transform transitionPosition;
+  public Transform gamePosition;
 
   public GameObject titleScreen;
   public GameObject creditsScreen;
@@ -22,12 +23,12 @@ public class TitleManager : MonoBehaviour {
     titleScreen.SetActive(true);
     creditsScreen.SetActive(false);
     scoreScreen.SetActive(false);
-    camera.transform.position = titlePosition;
+    camera.transform.position = titlePosition.position;
     currentScreen = titleScreen;
   }
 
   public void StartGame() {
-    loadSceneAsync("");
+    StartCoroutine(GoToScreen(gamePosition.position, null, true));
   }
 
   IEnumerator loadSceneAsync(string scene) {
@@ -43,28 +44,32 @@ public class TitleManager : MonoBehaviour {
   }
 
   public void ShowCredits() {
-    StartCoroutine(GoToScreen(creditsPosition, creditsScreen));
+    StartCoroutine(GoToScreen(creditsPosition.position, creditsScreen));
   }
 
   public void ShowTitleScreen() {
-    StartCoroutine(GoToScreen(titlePosition, titleScreen));
+    StartCoroutine(GoToScreen(titlePosition.position, titleScreen));
   }
 
-  IEnumerator GoToScreen(Vector3 to, GameObject showMenu) {
+  IEnumerator GoToScreen(Vector3 to, GameObject showMenu, bool startGame = false) {
     currentScreen.SetActive(false);
     Vector3 from = camera.transform.position;
     float i = 0;
     while (i < 1) {
       i += Time.deltaTime;
-      Vector3 p = GameManager.QuadInterp(from,transitionPosition,to, i);
+      Vector3 p = GameManager.QuadInterp(from, transitionPosition.position, to, i);
       camera.transform.position = p;
       yield return new WaitForEndOfFrame();
     }
     currentScreen = showMenu;
-    currentScreen.SetActive(true);
+    if (!startGame) {
+      currentScreen.SetActive(true);
+    }else {
+      yield return loadSceneAsync("GameScene");
+    }
   }
 
   public void ShowScore() {
-    StartCoroutine(GoToScreen(scorePosition, scoreScreen));
+    StartCoroutine(GoToScreen(scorePosition.position, scoreScreen));
   }
 }
