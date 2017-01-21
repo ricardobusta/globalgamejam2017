@@ -10,16 +10,19 @@ public class GameManager : MonoBehaviour {
   public GameObject player;
   public float playerSpeed = 1;
 
+  public int playerHealth = 10;
+  public TextMesh playerHealthText;
+
   public Text waveName;
 
   public WaveSpawner waveSpawner;
 
   static GameManager _instance;
 
-  List<BasicEnemy> enemyList;
+  public List<BasicEnemy> enemyList = new List<BasicEnemy>();
 
   public static GameManager Instance() {
-    if(_instance == null) {
+    if (_instance == null) {
       _instance = FindObjectOfType<GameManager>();
     }
     return _instance;
@@ -29,15 +32,23 @@ public class GameManager : MonoBehaviour {
   }
 
   void Update() {
-    player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, playerSpeed*100*Time.deltaTime);
+    if (Input.GetMouseButton(0)) {
+      PlayerClickedControl();
+    }
+    player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, playerSpeed * 100 * Time.deltaTime);
     waveSpawner.Handle();
-    foreach(BasicEnemy e in enemyList) {
+    foreach (BasicEnemy e in enemyList) {
       e.Handle();
     }
   }
 
   float AngleSign(Vector2 v1, Vector2 v2) {
     return Mathf.Sign(v1.x * v2.y - v1.y * v2.x);
+  }
+
+  public void Damage(int dmg) {
+    playerHealth -= dmg;
+    playerHealthText.text = playerHealth.ToString();
   }
 
   public void PlayerClickedControl() {

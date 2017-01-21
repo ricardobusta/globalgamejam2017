@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour {
+  Collider collider;
+
   void Start() {
+    collider = GetComponent<Collider>();
   }
 
-  public void Handle() {
-    transform.rotation = Quaternion.LookRotation(GameManager.Instance().player.transform.position - transform.position, Vector3.back);
+  virtual public void Handle() {
+    transform.position += transform.forward * Time.deltaTime;
+  }
+
+  private void OnCollisionEnter(Collision collision) {
+    Debug.Log("Collided");
   }
 }
