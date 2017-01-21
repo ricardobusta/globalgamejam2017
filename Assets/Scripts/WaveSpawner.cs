@@ -21,7 +21,7 @@ public class WaveSpawner : MonoBehaviour {
 
       SpawnEnemies(currentWave);
 
-      StartCoroutine(ShowWaveName());
+      StartCoroutine(GameManager.Instance().ShowWaveName(currentWave));
     }
   }
 
@@ -38,26 +38,5 @@ public class WaveSpawner : MonoBehaviour {
       enemy.transform.rotation = Quaternion.LookRotation(GameManager.Instance().player.transform.position - enemy.transform.position, Vector3.back);
       GameManager.Instance().enemyList.Add(enemy);
     }
-  }
-
-  IEnumerator ShowWaveName() {
-    Text waveName = GameManager.Instance().waveName;
-    waveName.gameObject.SetActive(true);
-    waveName.text = "WAVE " + currentWave.ToString();
-    Color c = waveName.color;
-    c.a = 0;
-    waveName.color = c;
-
-    for (int i = 0; i < 30; i++) {
-      c.a = i / 29.0f;
-      waveName.color = c;
-      yield return new WaitForSeconds(0.05f);
-    }
-    for (int i = 0; i < 30; i++) {
-      c.a = 1 - (i / 29.0f);
-      waveName.color = c;
-      yield return new WaitForSeconds(0.05f);
-    }
-    waveName.gameObject.SetActive(false);
   }
 }

@@ -14,7 +14,9 @@ Shader "GGJ2017/GlowShield"
 	Properties
 	{
 		_MainTex ("Hexagon", 2D) = "white" {}
-		_Color("Color", Color) = (0, 0, 0, 0)
+		_ColorHealthy("Color Healthy", Color) = (0, 0, 0, 0)
+		_ColorDamaged("Color Damaged", Color) = (0, 0, 0, 0)
+		_Health("Health", Range(0, 1)) = 0.5
 		_CrackedTex("Crackes", 2D) = "white" {}
 		_CrackedIntensity("Cracks Intensity", Range(0, 1)) = 0.5
 		_CrackedColor("Cracks Color", Color) = (0.8, 0.8, 0, 0)
@@ -84,7 +86,9 @@ Shader "GGJ2017/GlowShield"
 			}
 			
 			sampler2D _CameraDepthNormalsTexture;
-			fixed4 _Color;
+			fixed4 _ColorHealthy;
+			fixed4 _ColorDamaged;
+			fixed _Health;
 			fixed _CrackedIntensity;
 			fixed4 _CrackedColor;
 
@@ -99,6 +103,7 @@ Shader "GGJ2017/GlowShield"
 				mainTex.r *= triWave(_Time.x * 5, abs(i.objectPos.y) * 2, -0.7) * 6;
 				// I ended up saturaing the rim calculation because negative values caused weird artifacts
 				mainTex.g *= saturate(rim) * (sin(_Time.z + mainTex.b * 5) + 1);
+				fixed4 _Color = (_ColorHealthy*_Health + _ColorDamaged*(1 - _Health));
 				return mainTex.r * _Color + mainTex.g * _Color;
 			}
 
@@ -114,6 +119,7 @@ Shader "GGJ2017/GlowShield"
 				float northPole = (i.objectPos.y - 0.45) * 20;
 				float glow = max(max(intersect, rim), northPole);
 
+				fixed4 _Color = (_ColorHealthy*_Health + _ColorDamaged*(1 - _Health));
 				fixed4 glowColor = fixed4(lerp(_Color.rgb, fixed3(1, 1, 1), pow(glow, 4)), 1);
 				
 				fixed4 hexes = texColor(i, rim);

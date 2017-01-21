@@ -8,13 +8,20 @@ public class GameManager : MonoBehaviour {
   Quaternion targetRotation;
 
   public GameObject player;
+  public Transform shootPoint;
   public float playerSpeed = 1;
 
-  public int playerHealth = 10;
+  public MeshRenderer shieldRenderer;
+
+  public int playerMaxHealth = 10;
+  int playerHealth;
   public TextMesh playerHealthText;
 
   public float shootCooldown = 1;
   float currentShootCooldown = 0;
+
+  public int score = 0;
+  public Text scoreText;
 
   public Text waveName;
 
@@ -27,6 +34,8 @@ public class GameManager : MonoBehaviour {
   public Bullet bulletprefab;
   List<Bullet> playerBullets = new List<Bullet>();
 
+  bool gameOver = false;
+
   public static GameManager Instance() {
     if (_instance == null) {
       _instance = FindObjectOfType<GameManager>();
@@ -36,27 +45,33 @@ public class GameManager : MonoBehaviour {
 
   void Start() {
     currentShootCooldown = shootCooldown;
-
-    for(int i = 0; i < 10; i++) {
+    playerHealth = playerMaxHealth;
+    for (int i = 0; i < 30; i++) {
       Bullet b = Instantiate(bulletprefab);
       b.gameObject.SetActive(false);
       playerBullets.Add(b);
-      
     }
   }
 
   void Update() {
+    if (gameOver) {
+      return;
+    }
     currentShootCooldown -= Time.deltaTime;
     if (Input.GetMouseButton(0)) {
       PlayerClickedControl();
       PlayerShoot();
     }
     player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, playerSpeed * 100 * Time.deltaTime);
+
+    if (enemyList.Count == 0) {
+      waveSpawner.releaseWave = true;
+    }
     waveSpawner.Handle();
     foreach (BasicEnemy e in enemyList) {
       e.Handle();
     }
-    foreach(Bullet b in playerBullets) {
+    foreach (Bullet b in playerBullets) {
       b.Handle();
     }
   }
@@ -66,8 +81,19 @@ public class GameManager : MonoBehaviour {
   }
 
   public void Damage(int dmg) {
-    playerHealth -= dmg;
-    playerHealthText.text = playerHealth.ToString();
+    if (playerHealth > 0) {
+      playerHealth -= dmg;
+      playerHealthText.text = playerHealth.ToString();
+      shieldRenderer.material.SetFloat("_Health", (float)playerHealth / (float)playerMaxHealth);
+    } else {
+      gameOver = true;
+      StartCoroutine(ShowGameOver());
+    }
+  }
+
+  public void AwardPoints(int points) {
+    score += points;
+    scoreText.text = score.ToString("000000");
   }
 
   public void PlayerClickedControl() {
@@ -76,11 +102,11 @@ public class GameManager : MonoBehaviour {
   }
 
   public void PlayerShoot() {
-    if (currentShootCooldown <= 0 ) {
+    if (currentShootCooldown <= 0) {
       Debug.Log("Pew");
       currentShootCooldown = shootCooldown;
       Bullet bullet = null;
-      foreach(Bullet o in playerBullets) {
+      foreach (Bullet o in playerBullets) {
         if (!o.gameObject.activeSelf) {
           bullet = o;
           break;
@@ -89,8 +115,49 @@ public class GameManager : MonoBehaviour {
       if (bullet == null) return;
 
       bullet.gameObject.SetActive(true);
-      bullet.transform.position = player.transform.position;
+      bullet.SetLife();
+      bullet.transform.position = shootPoint.position;
       bullet.transform.rotation = player.transform.rotation;
+    }
+  }
+
+  public static Vector3 QuadInterp(Vector3 a, Vector3 b, Vector3 c, float t) {
+    return (1 - t) * ((t * b) + (1 - t) * a) + (t) * ((t * c) + (1 - t) * b);
+  }
+
+  public IEnumerator ShowWaveName(int currentWave) {
+    Text waveName = GameManager.Instance().waveName;
+    waveName.gameObject.SetActive(true);
+    waveName.text = "WAVE " + currentWave.ToString();
+    Color c = waveName.color;
+    c.a = 0;
+    waveName.color = c;
+
+    for (int i = 0; i < 30; i++) {
+      c.a = i / 29.0f;
+      waveName.color = c;
+      yield return new WaitForSeconds(0.05f);
+    }
+    for (int i = 0; i < 30; i++) {
+      c.a = 1 - (i / 29.0f);
+      waveName.color = c;
+      yield return new WaitForSeconds(0.05f);
+    }
+    waveName.gameObject.SetActive(false);
+  }
+
+  IEnumerator ShowGameOver() {
+    Text waveName = GameManager.Instance().waveName;
+    waveName.gameObject.SetActive(true);
+    waveName.text = "GAME OVER";
+    Color c = waveName.color;
+    c.a = 0;
+    waveName.color = c;
+
+    for (int i = 0; i < 30; i++) {
+      c.a = i / 29.0f;
+      waveName.color = c;
+      yield return new WaitForSeconds(0.05f);
     }
   }
 }
