@@ -81,7 +81,7 @@ Material:
       second: 1
     - first:
         name: _CrackedIntensity
-      second: 1
+      second: 0
     - first:
         name: _Cutoff
       second: 0.5
