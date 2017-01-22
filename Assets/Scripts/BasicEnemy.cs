@@ -45,14 +45,19 @@ public class BasicEnemy : MonoBehaviour {
 
   private void OnTriggerEnter(Collider other) {
     if (other.tag == "Planet") {
-      GameManager.Instance().Damage(1);
-      GameManager.Instance().enemyList.Remove(this);
+      GameManager m = GameManager.Instance();
+      m.explosion.playExplosion(transform.position);
+      m.Damage(1);
+      m.enemyList.Remove(this);
       Destroy(gameObject);
     } else if (other.tag == "Player Bullets") {
+      GameManager m = GameManager.Instance();
       if (Mathf.Abs(transform.position.y) < 0.7f && Mathf.Abs(transform.position.x) < 0.95f) {
-        GameManager.Instance().enemyList.Remove(this);
+        m.explosion.playExplosion(transform.position);
+        m.soundManager.playEnemyHit();
+        m.enemyList.Remove(this);
         Destroy(gameObject);
-        GameManager.Instance().AwardPoints(pointsWorth);
+        m.AwardPoints(pointsWorth);
       }
     }
   }

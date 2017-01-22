@@ -50,6 +50,10 @@ public class GameManager : MonoBehaviour {
   public EventSystem eventSystem;
   public GameObject gameOverButton;
 
+  public SoundManager soundManager;
+
+  public ExplosionManager explosion;
+
   public static GameManager Instance() {
     if (_instance == null) {
       _instance = FindObjectOfType<GameManager>();
@@ -164,6 +168,7 @@ public class GameManager : MonoBehaviour {
       if (bullet == null) return;
 
       bullet.gameObject.SetActive(true);
+      soundManager.playerShoot.Play();
       bullet.SetLife();
       bullet.transform.position = shootPoint.position;
       bullet.transform.rotation = player.transform.rotation;
@@ -227,6 +232,7 @@ public class GameManager : MonoBehaviour {
 
   IEnumerator ScreenShake() {
     Vector3 original = camera.transform.position;
+    soundManager.damageReceived.Play();
 
     float shakeEffect = 1;
 
@@ -247,11 +253,13 @@ public class GameManager : MonoBehaviour {
   }
 
   public void RetryClicked() {
+    soundManager.buttonSound.Play();
     loadingScreen.SetActive(true);
     StartCoroutine(loadSceneAsync(SceneManager.GetActiveScene().name));
   }
 
   public void ExitClicked() {
+    soundManager.buttonSound.Play();
     loadingScreen.SetActive(true);
     StartCoroutine(loadSceneAsync("TitleScreen"));
   }

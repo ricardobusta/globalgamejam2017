@@ -27,6 +27,8 @@ public class TitleManager : MonoBehaviour {
 
   GameObject currentScreen;
 
+  public AudioSource buttonClick;
+
   private void Start() {
     titleScreen.SetActive(true);
     creditsScreen.SetActive(false);
@@ -53,6 +55,7 @@ public class TitleManager : MonoBehaviour {
 
   IEnumerator GoToScreen(Vector3 to, GameObject showMenu, GameObject focusObject, bool startGame = false) {
     currentScreen.SetActive(false);
+    buttonClick.Play();
     Vector3 from = camera.transform.position;
     float i = 0;
     while (i < 1) {
