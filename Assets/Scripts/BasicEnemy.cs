@@ -18,14 +18,10 @@ public class BasicEnemy : MonoBehaviour {
 
   bool deaccelerate = false;
 
-<<<<<<< HEAD
   void Start() {
-    collider = GetComponent<Collider>();
     _tr = GetComponent<Transform>();
   }
 
-=======
->>>>>>> 9a1091e1f07624ccf06745986f1618768b95f237
   float outInCubic(float t) {
     if (t < (0.5f)) {
       return 0.5f * (Mathf.Pow(t * 2 - 1, 3) + 1);
