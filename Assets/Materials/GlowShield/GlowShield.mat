@@ -25,7 +25,7 @@ Material:
         name: _CrackedTex
       second:
         m_Texture: {fileID: 2800000, guid: 3f6afe8479cd51f48beb670e89f5f7e9, type: 3}
-        m_Scale: {x: 5, y: 5}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 2.58, y: -0.07}
     - first:
         name: _DetailAlbedoMap

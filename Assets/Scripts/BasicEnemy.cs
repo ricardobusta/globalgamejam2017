@@ -49,7 +49,7 @@ public class BasicEnemy : MonoBehaviour {
       GameManager.Instance().enemyList.Remove(this);
       Destroy(gameObject);
     } else if (other.tag == "Player Bullets") {
-      if (Mathf.Abs(transform.position.y) < Screen.height / 2 && Mathf.Abs(transform.position.x) < Screen.width / 2) {
+      if (Mathf.Abs(transform.position.y) < 0.7f && Mathf.Abs(transform.position.x) < 0.95f) {
         GameManager.Instance().enemyList.Remove(this);
         Destroy(gameObject);
         GameManager.Instance().AwardPoints(pointsWorth);

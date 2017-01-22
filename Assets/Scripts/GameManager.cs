@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -45,6 +46,9 @@ public class GameManager : MonoBehaviour {
   public GameObject playerHealthDisplay;
 
   public GameObject loadingScreen;
+
+  public EventSystem eventSystem;
+  public GameObject gameOverButton;
 
   public static GameManager Instance() {
     if (_instance == null) {
@@ -194,19 +198,31 @@ public class GameManager : MonoBehaviour {
   IEnumerator ShowGameOver() {
     //Text waveName = GameManager.Instance().waveName;
     gameOverScreen.SetActive(true);
+
+    Image[] images = gameOverScreen.GetComponentsInChildren<Image>();
+    Text[] texts = gameOverScreen.GetComponentsInChildren<Text>();
+    foreach(Image i in images) {
+      i.color = new Color(1, 1, 1, 0);
+    }
+    foreach(Text t in texts) {
+      t.color = new Color(1, 1, 0, 0);
+    }
+
+    eventSystem.SetSelectedGameObject(gameOverButton);
     yield return null;
 
-    //waveName.gameObject.SetActive(true);
-    //waveName.text = "GAME OVER";
-    //Color c = waveName.color;
-    //c.a = 0;
-    //waveName.color = c;
-
-    //for (int i = 0; i < 30; i++) {
-    //  c.a = i / 29.0f;
-    //  waveName.color = c;
-    //  yield return new WaitForSeconds(0.05f);
-    //}
+    for (int j = 0; j < 10; j++) {
+      float a = j / 9.0f;
+      foreach (Image i in images) {
+        i.color = new Color(1, 1, 1, a);
+      }
+      foreach (Text t in texts) {
+        Color c = t.color;
+        c.a = a;
+        t.color = c;
+      }
+      yield return new WaitForSeconds(0.05f);
+    }
   }
 
   IEnumerator ScreenShake() {

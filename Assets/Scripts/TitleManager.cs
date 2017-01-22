@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour {
@@ -18,6 +19,12 @@ public class TitleManager : MonoBehaviour {
   public GameObject scoreScreen;
   public GameObject loadingScreen;
 
+  public GameObject titleButton;
+  public GameObject creditsButton;
+  public GameObject scoreButton;
+
+  public EventSystem eventSystem;
+
   GameObject currentScreen;
 
   private void Start() {
@@ -29,7 +36,7 @@ public class TitleManager : MonoBehaviour {
   }
 
   public void StartGame() {
-    StartCoroutine(GoToScreen(gamePosition.position, null, true));
+    StartCoroutine(GoToScreen(gamePosition.position, null, null, true));
   }
 
   public void ExitGame() {
@@ -37,14 +44,14 @@ public class TitleManager : MonoBehaviour {
   }
 
   public void ShowCredits() {
-    StartCoroutine(GoToScreen(creditsPosition.position, creditsScreen));
+    StartCoroutine(GoToScreen(creditsPosition.position, creditsScreen, creditsButton));
   }
 
   public void ShowTitleScreen() {
-    StartCoroutine(GoToScreen(titlePosition.position, titleScreen));
+    StartCoroutine(GoToScreen(titlePosition.position, titleScreen, titleButton));
   }
 
-  IEnumerator GoToScreen(Vector3 to, GameObject showMenu, bool startGame = false) {
+  IEnumerator GoToScreen(Vector3 to, GameObject showMenu, GameObject focusObject, bool startGame = false) {
     currentScreen.SetActive(false);
     Vector3 from = camera.transform.position;
     float i = 0;
@@ -57,6 +64,7 @@ public class TitleManager : MonoBehaviour {
     currentScreen = showMenu;
     if (!startGame) {
       currentScreen.SetActive(true);
+      eventSystem.SetSelectedGameObject(focusObject);
     }else {
       loadingScreen.SetActive(true);
       yield return GameManager.loadSceneAsync("GameScene");
@@ -64,6 +72,6 @@ public class TitleManager : MonoBehaviour {
   }
 
   public void ShowScore() {
-    StartCoroutine(GoToScreen(scorePosition.position, scoreScreen));
+    StartCoroutine(GoToScreen(scorePosition.position, scoreScreen, scoreButton));
   }
 }
