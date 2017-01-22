@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TitleManager : MonoBehaviour {
 
@@ -27,6 +28,8 @@ public class TitleManager : MonoBehaviour {
 
   GameObject currentScreen;
 
+  public Text score;
+
   public AudioSource buttonClick;
 
   private void Start() {
@@ -35,6 +38,7 @@ public class TitleManager : MonoBehaviour {
     scoreScreen.SetActive(false);
     camera.transform.position = titlePosition.position;
     currentScreen = titleScreen;
+    score.text = GameManager.GetScores(10);
   }
 
   public void StartGame() {

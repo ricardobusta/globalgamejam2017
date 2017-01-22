@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour {
-  Collider collider;
-
   public float breakRadius;
   public float speed;
 
@@ -15,10 +13,6 @@ public class BasicEnemy : MonoBehaviour {
   Vector3 targetPosition;
 
   bool deaccelerate = false;
-
-  void Start() {
-    collider = GetComponent<Collider>();
-  }
 
   float outInCubic(float t) {
     if (t < (0.5f)) {
@@ -52,7 +46,7 @@ public class BasicEnemy : MonoBehaviour {
       Destroy(gameObject);
     } else if (other.tag == "Player Bullets") {
       GameManager m = GameManager.Instance();
-      if (Mathf.Abs(transform.position.y) < 0.7f && Mathf.Abs(transform.position.x) < 0.95f) {
+      if (Mathf.Abs(transform.position.y) < 0.7f && Mathf.Abs(transform.position.x) < 1.23f) {
         m.explosion.playExplosion(transform.position);
         m.soundManager.playEnemyHit();
         m.enemyList.Remove(this);
