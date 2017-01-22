@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
   public Camera camera;
+  public GameObject background;
   Quaternion targetRotation;
 
   public GameObject player;
@@ -61,8 +62,13 @@ public class GameManager : MonoBehaviour {
       return;
     }
     currentShootCooldown -= Time.deltaTime;
+    float h = Input.GetAxis("Horizontal");
+    float v = Input.GetAxis("Vertical");
     if (Input.GetMouseButton(0)) {
       PlayerClickedControl();
+      PlayerShoot();
+    }else if(h!=0 || v != 0) {
+      PlayerDirectionControl(new Vector3(h, v, 0).normalized);
       PlayerShoot();
     }
     player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, playerSpeed * 100 * Time.deltaTime);
@@ -81,9 +87,12 @@ public class GameManager : MonoBehaviour {
 
   IEnumerator StartSequence() {
     float i = 0;
+    Vector3 bgsize = new Vector3(2.8f, 1.4f, 1);
     while (i < 1) {
       i += Time.deltaTime;
-      camera.orthographicSize = Mathf.Lerp(5.0f, 0.7f, Mathf.Sin(i*Mathf.PI/2));
+      float l = Mathf.Lerp(6 , 1, Mathf.Sin(i * Mathf.PI / 2));
+      camera.orthographicSize = 0.7f * l;
+      background.transform.localScale = bgsize * l;
       yield return new WaitForEndOfFrame();
     }
     camera.orthographicSize = 0.7f;
@@ -98,7 +107,7 @@ public class GameManager : MonoBehaviour {
     if (playerHealth > 0) {
       playerHealth -= dmg;
       playerHealthText.text = playerHealth.ToString();
-      shieldRenderer.material.SetFloat("_CrackedIntensity", 1-((float)playerHealth / (float)playerMaxHealth));
+      shieldRenderer.material.SetFloat("_CrackedIntensity", 1 - ((float)playerHealth / (float)playerMaxHealth));
     } else {
       gameOver = true;
       StartCoroutine(ShowGameOver());
@@ -112,6 +121,10 @@ public class GameManager : MonoBehaviour {
 
   public void PlayerClickedControl() {
     Vector3 dir = (Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2)).normalized;
+    targetRotation = Quaternion.LookRotation(dir, Vector3.back);
+  }
+
+  public void PlayerDirectionControl(Vector3 dir) {
     targetRotation = Quaternion.LookRotation(dir, Vector3.back);
   }
 

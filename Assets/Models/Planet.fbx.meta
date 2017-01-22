@@ -14,6 +14,13 @@ ModelImporter:
     100012: Point
     100014: Sun
     100016: Sun.001
+    100018: Antenna
+    100020: Base
+    100022: Camera.001
+    100024: Earth
+    100026: Moon
+    100028: ThrusterLeft
+    100030: ThrusterRight
     400000: Camera
     400002: Empty
     400004: Icosphere
@@ -23,15 +30,40 @@ ModelImporter:
     400012: Point
     400014: Sun
     400016: Sun.001
+    400018: Antenna
+    400020: Base
+    400022: Camera.001
+    400024: Earth
+    400026: Moon
+    400028: ThrusterLeft
+    400030: ThrusterRight
     2300000: Icosphere
     2300002: Plane
     2300004: Plane.001
+    2300006: Antenna
+    2300008: Base
+    2300010: Earth
+    2300012: Moon
+    2300014: ThrusterLeft
+    2300016: ThrusterRight
     3300000: Icosphere
     3300002: Plane
     3300004: Plane.001
+    3300006: Antenna
+    3300008: Base
+    3300010: Earth
+    3300012: Moon
+    3300014: ThrusterLeft
+    3300016: ThrusterRight
     4300000: Icosphere
     4300002: Plane
     4300004: Plane.001
+    4300006: Moon
+    4300008: ThrusterLeft
+    4300010: ThrusterRight
+    4300012: Base
+    4300014: Antenna
+    4300016: Earth
   materials:
     importMaterials: 1
     materialName: 0

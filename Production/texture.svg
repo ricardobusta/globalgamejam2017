@@ -20,6 +20,42 @@
   <defs
      id="defs4">
     <linearGradient
+       id="linearGradient8645"
+       inkscape:collect="always">
+      <stop
+         id="stop8647"
+         offset="0"
+         style="stop-color:#250080;stop-opacity:1" />
+      <stop
+         id="stop8649"
+         offset="1"
+         style="stop-color:#9f27ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient8633"
+       inkscape:collect="always">
+      <stop
+         id="stop8635"
+         offset="0"
+         style="stop-color:#3d0080;stop-opacity:1" />
+      <stop
+         id="stop8637"
+         offset="1"
+         style="stop-color:#510080;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient8573">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0"
+         id="stop8575" />
+      <stop
+         style="stop-color:#00ccff;stop-opacity:1"
+         offset="1"
+         id="stop8577" />
+    </linearGradient>
+    <linearGradient
        inkscape:collect="always"
        id="linearGradient8522">
       <stop
@@ -74,10 +110,10 @@
        x1="393.30606"
        y1="867.27692"
        x2="393.30606"
-       y2="866.80988"
+       y2="865.99603"
        gradientUnits="userSpaceOnUse"
        spreadMethod="reflect"
-       gradientTransform="matrix(2.3676879,0,0,3.3062019,-396.86665,-2001.3791)" />
+       gradientTransform="matrix(2.3158969,0,0,3.0410223,-380.50713,-1769.7633)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient8487"
@@ -87,7 +123,7 @@
        x2="560.2691"
        y2="740.56763"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.925,0,0,0.865,41.870185,109.02163)" />
+       gradientTransform="matrix(0.90476647,0,0,0.7956212,48.632741,171.36913)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient8504"
@@ -97,7 +133,7 @@
        x2="580.06104"
        y2="-60.510956"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.92592593,0,0,0.92592593,41.352904,0.83043)" />
+       gradientTransform="matrix(0.90567215,0,0,0.85166047,48.126774,804.34415)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient8522"
@@ -107,18 +143,158 @@
        x2="410.82904"
        y2="-62.198051"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-0.033205,796.35627)"
+       gradientTransform="matrix(0.97812592,0,0,0.91979331,7.645949,803.57494)"
        spreadMethod="repeat" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient8504"
        id="linearGradient8562"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.92592593,0,0,0.92592593,41.352904,0.83043)"
+       gradientTransform="matrix(0.90567215,0,0,0.85166048,48.126775,804.34415)"
        x1="580.06104"
        y1="86.705078"
        x2="580.06104"
        y2="-60.510956" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8573"
+       id="radialGradient8579"
+       cx="533.15857"
+       cy="730.54553"
+       fx="533.15857"
+       fy="730.54553"
+       r="7.2454481"
+       gradientTransform="matrix(0.97812592,0,0,1.1442073,180.93415,-93.426936)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8573"
+       id="radialGradient8583"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.97812592,0,0,1.1442073,197.70641,-93.426936)"
+       cx="533.15857"
+       cy="730.54553"
+       fx="533.15857"
+       fy="730.54553"
+       r="7.2454481" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8573"
+       id="radialGradient8587"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.97812592,0,0,1.1442073,214.47866,-93.426936)"
+       cx="533.15857"
+       cy="730.54553"
+       fx="533.15857"
+       fy="730.54553"
+       r="7.2454481" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8522"
+       id="linearGradient8593"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.97812592,0,0,0.91979332,7.645949,803.57493)"
+       spreadMethod="repeat"
+       x1="410.82904"
+       y1="-3.1546364"
+       x2="410.82904"
+       y2="-62.198051" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8645"
+       id="linearGradient8615"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.3158969,0,0,3.0410223,-380.50713,-1568.7633)"
+       spreadMethod="reflect"
+       x1="393.30606"
+       y1="867.27692"
+       x2="393.30606"
+       y2="865.99603" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8633"
+       id="linearGradient8617"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.90476647,0,0,0.7956212,48.632741,372.36913)"
+       x1="560.2691"
+       y1="876.56763"
+       x2="560.2691"
+       y2="740.56763" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8504"
+       id="linearGradient8619"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.90567215,0,0,0.85166048,48.126775,1005.3442)"
+       x1="580.06104"
+       y1="86.705078"
+       x2="580.06104"
+       y2="-60.510956" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8504"
+       id="linearGradient8621"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.90567215,0,0,0.85166047,48.126774,1005.3442)"
+       x1="580.06104"
+       y1="86.705078"
+       x2="580.06104"
+       y2="-60.510956" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8522"
+       id="linearGradient8623"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.97812592,0,0,0.91979331,7.645949,1004.5749)"
+       spreadMethod="repeat"
+       x1="410.82904"
+       y1="-3.1546364"
+       x2="410.82904"
+       y2="-62.198051" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8522"
+       id="linearGradient8625"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.97812592,0,0,0.91979332,7.645949,1004.5749)"
+       spreadMethod="repeat"
+       x1="410.82904"
+       y1="-3.1546364"
+       x2="410.82904"
+       y2="-62.198051" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8573"
+       id="radialGradient8627"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.97812592,0,0,1.1442073,180.93415,107.57306)"
+       cx="533.15857"
+       cy="730.54553"
+       fx="533.15857"
+       fy="730.54553"
+       r="7.2454481" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8573"
+       id="radialGradient8629"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.97812592,0,0,1.1442073,197.70641,107.57306)"
+       cx="533.15857"
+       cy="730.54553"
+       fx="533.15857"
+       fy="730.54553"
+       r="7.2454481" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient8573"
+       id="radialGradient8631"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.97812592,0,0,1.1442073,214.47866,107.57306)"
+       cx="533.15857"
+       cy="730.54553"
+       fx="533.15857"
+       fy="730.54553"
+       r="7.2454481" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -127,9 +303,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="585.71779"
-     inkscape:cy="254.52435"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="578.29537"
+     inkscape:cy="108.97889"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -156,11 +332,34 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-796.36213)">
+    <rect
+       style="opacity:1;fill:url(#linearGradient8483);fill-opacity:1;stroke:none;stroke-width:16;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8475"
+       width="361.90659"
+       height="119.34318"
+       x="372.78265"
+       y="754.21545"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       y="754.21545"
+       x="372.78265"
+       height="119.34318"
+       width="361.90659"
+       id="rect8485"
+       style="opacity:1;fill:url(#linearGradient8493);fill-opacity:1;stroke:none;stroke-width:16;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
-       style="opacity:1;fill:url(#linearGradient8562);fill-opacity:1;stroke:#000000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 365.2168 -66.300781 L 355.73633 -56.818359 L 355.73633 -17.355469 L 358.26953 -17.400391 L 358.26953 86.205078 L 627.37891 86.205078 L 623.02344 88.710938 L 751.32227 88.710938 L 760.80273 79.228516 L 760.80273 39.765625 L 758.26953 39.810547 L 758.26953 -63.794922 L 489.16016 -63.794922 L 493.51562 -66.300781 L 365.2168 -66.300781 z M 466.83008 -50.947266 L 741.29297 -50.947266 L 741.29297 40.111328 L 738.82812 40.154297 L 738.82812 70.863281 L 654.04297 70.863281 L 649.70898 73.357422 L 375.24414 73.357422 L 375.24414 -17.701172 L 377.71094 -17.744141 L 377.71094 -48.453125 L 462.49609 -48.453125 L 466.83008 -50.947266 z "
-       transform="translate(0,796.36213)"
-       id="path8558" />
+       style="opacity:1;fill:url(#linearGradient8562);fill-opacity:1;stroke:#000000;stroke-width:3.79404521;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 364.90645,742.59731 -9.27309,8.72187 0,36.2977 2.47778,-0.0413 0,95.29561 263.22286,0 -4.2602,2.30487 125.49241,0 9.27308,-8.72186 0,-36.29771 -2.47778,0.0413 0,-95.29562 -263.22285,0 4.26019,-2.30487 -125.4924,0 z m 99.39058,14.12206 268.45927,0 0,83.75508 -2.41093,0.0395 0,28.24592 -82.93056,0 -4.23918,2.2941 -268.46118,0 0,-83.75509 2.41283,-0.0395 0,-28.24592 82.93056,0 4.23919,-2.29409 z"
+       id="path8558"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="opacity:1;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:16;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect4684"
@@ -2721,39 +2920,157 @@
        inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\flat_textures.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
-    <rect
-       style="opacity:1;fill:url(#linearGradient8483);fill-opacity:1;stroke:none;stroke-width:16;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect8475"
-       width="370"
-       height="129.75"
-       x="373.26913"
-       y="742.69263" />
-    <rect
-       y="742.69263"
-       x="373.26913"
-       height="129.75"
-       width="370"
-       id="rect8485"
-       style="opacity:1;fill:url(#linearGradient8493);fill-opacity:1;stroke:none;stroke-width:16;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        style="opacity:1;fill:#000080;fill-opacity:1;stroke:none;stroke-width:14.92523289;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 368.41161,733.59586 -9.32358,9.04999 0,37.66326 2.49129,-0.0429 0,98.88075 264.6559,0 -4.28338,2.39158 126.17562,0 9.32357,-9.04999 0,-37.66326 -2.49129,0.0429 0,-98.88074 -264.65589,0 4.28337,-2.39158 -126.17561,0 z m 99.9317,14.65333 269.92082,0 0,86.90606 -2.42405,0.041 0,29.30857 -83.38205,0 -4.26228,2.38041 -269.92275,0 0,-86.90606 2.42598,-0.041 0,-29.30857 83.38205,0 4.26228,-2.38039 z"
+       d="m 368.03137,745.84832 -9.11964,8.32413 0,34.64241 2.4368,-0.0394 0,90.94985 258.8668,0 -4.18969,2.19976 123.41565,0 9.11963,-8.32411 0,-34.64242 -2.4368,0.0394 0,-90.94984 -258.86679,0 4.18968,-2.19977 -123.41564,0 z m 97.74579,13.47804 264.01655,0 0,79.93561 -2.37103,0.0377 0,26.95782 -81.55814,0 -4.16905,2.18948 -264.01843,0 0,-79.9356 2.37291,-0.0377 0,-26.95784 81.55814,0 4.16905,-2.18946 z"
        id="path8551"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        style="opacity:1;fill:url(#linearGradient8510);fill-opacity:1;stroke:none;stroke-width:16;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="M 377.29492 -63.794922 L 358.26953 -52.810547 L 358.26953 86.205078 L 746.49023 86.205078 L 758.26953 77.136719 L 758.26953 -63.794922 L 377.29492 -63.794922 z M 375.24414 -50.947266 L 741.29297 -50.947266 L 741.29297 73.357422 L 375.24414 73.357422 L 375.24414 -50.947266 z "
-       transform="translate(0,796.36213)"
-       id="rect8497" />
+       d="m 376.72037,744.90218 -18.60923,10.10336 0,127.86563 379.72873,0 11.52164,-8.34101 0,-129.62798 -372.64114,0 z m -2.00592,11.81719 358.04185,0 0,114.33462 -358.04185,0 0,-114.33462 z"
+       id="rect8497"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
        inkscape:connector-curvature="0"
        id="path8565"
-       d="m 365.2168,730.06135 -9.48047,9.48242 0,39.46289 21.97461,-0.38867 0,-30.70899 84.78516,0 31.01953,-17.84765 -128.29883,0 z m 395.58594,106.0664 -21.97462,0.38868 0,30.70898 -84.78515,0 -31.01953,17.84766 128.29883,0 9.48047,-9.48243 0,-39.46289 z"
-       style="fill:url(#linearGradient8528);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       d="m 364.90645,742.59731 -9.27309,8.72187 0,36.2977 21.49392,-0.3575 0,-28.24592 82.93057,0 30.34101,-16.41615 -125.49241,0 z m 386.93285,97.55916 -21.49393,0.3575 0,28.24592 -82.93056,0 -30.34101,16.41616 125.49241,0 9.27309,-8.72187 0,-36.29771 z"
+       style="fill:url(#linearGradient8528);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.79404521;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <path
-       style="fill:url(#linearGradient8528);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 365.2168,730.06135 -9.48047,9.48242 0,39.46289 21.97461,-0.38867 0,-30.70899 84.78516,0 31.01953,-17.84765 -128.29883,0 z m 395.58594,106.0664 -21.97462,0.38868 0,30.70898 -84.78515,0 -31.01953,17.84766 128.29883,0 9.48047,-9.48243 0,-39.46289 z"
+       style="fill:url(#linearGradient8593);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 364.90645,742.59731 -9.27309,8.72187 0,36.2977 21.49392,-0.3575 0,-28.24592 82.93057,0 30.34101,-16.41615 -125.49241,0 z m 386.93285,97.55916 -21.49393,0.3575 0,28.24592 -82.93056,0 -30.34101,16.41616 125.49241,0 9.27309,-8.72187 0,-36.29771 z"
        id="path8512"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <ellipse
+       style="opacity:1;fill:url(#radialGradient8579);fill-opacity:1;stroke:#000000;stroke-width:2.11380577;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path8567"
+       cx="704.15942"
+       cy="745.39539"
+       rx="5.9970589"
+       ry="7.2653913"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <ellipse
+       ry="7.2653913"
+       rx="5.9970589"
+       cy="745.39539"
+       cx="720.93164"
+       id="ellipse8581"
+       style="opacity:1;fill:url(#radialGradient8583);fill-opacity:1;stroke:#000000;stroke-width:2.11380577;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <ellipse
+       style="opacity:1;fill:url(#radialGradient8587);fill-opacity:1;stroke:#000000;stroke-width:2.11380577;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse8585"
+       cx="737.70392"
+       cy="745.39539"
+       rx="5.9970589"
+       ry="7.2653913"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button2.png"
+       y="955.21545"
+       x="372.78265"
+       height="119.34318"
+       width="361.90659"
+       id="rect8595"
+       style="opacity:1;fill:url(#linearGradient8615);fill-opacity:1;stroke:none;stroke-width:16;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button2.png"
+       style="opacity:1;fill:url(#linearGradient8617);fill-opacity:1;stroke:none;stroke-width:16;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8597"
+       width="361.90659"
+       height="119.34318"
+       x="372.78265"
+       y="955.21545" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button2.png"
+       inkscape:connector-curvature="0"
+       id="path8599"
+       d="m 364.90645,943.59731 -9.27309,8.72187 0,36.2977 2.47778,-0.0413 0,95.29562 263.22286,0 -4.2602,2.3049 125.49241,0 9.27308,-8.7219 0,-36.2977 -2.47778,0.041 0,-95.29563 -263.22285,0 4.26019,-2.30487 -125.4924,0 z m 99.39058,14.12206 268.45927,0 0,83.75513 -2.41093,0.039 0,28.2459 -82.93056,0 -4.23918,2.2941 -268.46118,0 0,-83.75512 2.41283,-0.0395 0,-28.24592 82.93056,0 4.23919,-2.29409 z"
+       style="opacity:1;fill:url(#linearGradient8619);fill-opacity:1;stroke:#000000;stroke-width:3.79404521;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button2.png"
+       inkscape:connector-curvature="0"
+       id="path8601"
+       d="m 368.03137,946.84832 -9.11964,8.32413 0,34.64241 2.4368,-0.0394 0,90.94984 258.8668,0 -4.18969,2.1998 123.41565,0 9.11963,-8.3241 0,-34.6425 -2.4368,0.039 0,-90.9498 -258.86679,0 4.18968,-2.19977 -123.41564,0 z m 97.74579,13.47804 264.01655,0 0,79.93564 -2.37103,0.038 0,26.9578 -81.55814,0 -4.16905,2.1895 -264.01843,0 0,-79.93563 2.37291,-0.0377 0,-26.95784 81.55814,0 4.16905,-2.18946 z"
+       style="opacity:1;fill:#000080;fill-opacity:1;stroke:none;stroke-width:14.92523289;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button2.png"
+       inkscape:connector-curvature="0"
+       id="path8603"
+       d="m 376.72037,945.90218 -18.60923,10.10336 0,127.86566 379.72873,0 11.52164,-8.341 0,-129.62802 -372.64114,0 z m -2.00592,11.81719 358.04185,0 0,114.33463 -358.04185,0 0,-114.33463 z"
+       style="opacity:1;fill:url(#linearGradient8621);fill-opacity:1;stroke:none;stroke-width:16;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button2.png"
+       style="fill:url(#linearGradient8623);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3.79404521;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 364.90645,943.59731 -9.27309,8.72187 0,36.2977 21.49392,-0.3575 0,-28.24592 82.93057,0 30.34101,-16.41615 -125.49241,0 z m 386.93285,97.55919 -21.49393,0.3575 0,28.2459 -82.93056,0 -30.34101,16.4162 125.49241,0 9.27309,-8.7219 0,-36.2977 z"
+       id="path8605"
        inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button2.png"
+       inkscape:connector-curvature="0"
+       id="path8607"
+       d="m 364.90645,943.59731 -9.27309,8.72187 0,36.2977 21.49392,-0.3575 0,-28.24592 82.93057,0 30.34101,-16.41615 -125.49241,0 z m 386.93285,97.55919 -21.49393,0.3575 0,28.2459 -82.93056,0 -30.34101,16.4162 125.49241,0 9.27309,-8.7219 0,-36.2977 z"
+       style="fill:url(#linearGradient8625);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button2.png"
+       ry="7.2653913"
+       rx="5.9970589"
+       cy="946.39539"
+       cx="704.15942"
+       id="ellipse8609"
+       style="opacity:1;fill:url(#radialGradient8627);fill-opacity:1;stroke:#000000;stroke-width:2.11380577;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <ellipse
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button2.png"
+       style="opacity:1;fill:url(#radialGradient8629);fill-opacity:1;stroke:#000000;stroke-width:2.11380577;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse8611"
+       cx="720.93164"
+       cy="946.39539"
+       rx="5.9970589"
+       ry="7.2653913" />
+    <ellipse
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\button2.png"
+       ry="7.2653913"
+       rx="5.9970589"
+       cy="946.39539"
+       cx="737.70392"
+       id="ellipse8613"
+       style="opacity:1;fill:url(#radialGradient8631);fill-opacity:1;stroke:#000000;stroke-width:2.11380577;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
