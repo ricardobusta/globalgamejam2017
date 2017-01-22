@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
@@ -17,7 +18,8 @@ public class GameManager : MonoBehaviour {
 
   public int playerMaxHealth = 10;
   int playerHealth;
-  public TextMesh playerHealthText;
+  public Text playerHealthText;
+  public GameObject debris;
 
   public float shootCooldown = 1;
   float currentShootCooldown = 0;
@@ -38,6 +40,12 @@ public class GameManager : MonoBehaviour {
 
   bool gameOver;
 
+  public GameObject gameOverScreen;
+
+  public GameObject playerHealthDisplay;
+
+  public GameObject loadingScreen;
+
   public static GameManager Instance() {
     if (_instance == null) {
       _instance = FindObjectOfType<GameManager>();
@@ -53,8 +61,14 @@ public class GameManager : MonoBehaviour {
       b.gameObject.SetActive(false);
       playerBullets.Add(b);
     }
+    playerHealthText.text = playerHealth.ToString("00");
+    playerHealthDisplay.SetActive(false);
     gameOver = true;
     StartCoroutine(StartSequence());
+    debris.SetActive(false);
+    shieldRenderer.gameObject.SetActive(true);
+    shieldRenderer.material.SetFloat("_CrackedIntensity", 0);
+    gameOverScreen.SetActive(false);
   }
 
   void Update() {
@@ -97,6 +111,7 @@ public class GameManager : MonoBehaviour {
     }
     camera.orthographicSize = 0.7f;
     gameOver = false;
+    playerHealthDisplay.SetActive(true);
   }
 
   float AngleSign(Vector2 v1, Vector2 v2) {
@@ -106,12 +121,16 @@ public class GameManager : MonoBehaviour {
   public void Damage(int dmg) {
     if (playerHealth > 0) {
       playerHealth -= dmg;
-      playerHealthText.text = playerHealth.ToString();
+      playerHealthText.text = playerHealth.ToString("00");
       shieldRenderer.material.SetFloat("_CrackedIntensity", 1 - ((float)playerHealth / (float)playerMaxHealth));
     } else {
       gameOver = true;
+      playerHealthDisplay.SetActive(false);
+      debris.SetActive(true);
+      shieldRenderer.gameObject.SetActive(false);
       StartCoroutine(ShowGameOver());
     }
+    StartCoroutine(ScreenShake());
   }
 
   public void AwardPoints(int points) {
@@ -173,17 +192,51 @@ public class GameManager : MonoBehaviour {
   }
 
   IEnumerator ShowGameOver() {
-    Text waveName = GameManager.Instance().waveName;
-    waveName.gameObject.SetActive(true);
-    waveName.text = "GAME OVER";
-    Color c = waveName.color;
-    c.a = 0;
-    waveName.color = c;
+    //Text waveName = GameManager.Instance().waveName;
+    gameOverScreen.SetActive(true);
+    yield return null;
 
-    for (int i = 0; i < 30; i++) {
-      c.a = i / 29.0f;
-      waveName.color = c;
-      yield return new WaitForSeconds(0.05f);
+    //waveName.gameObject.SetActive(true);
+    //waveName.text = "GAME OVER";
+    //Color c = waveName.color;
+    //c.a = 0;
+    //waveName.color = c;
+
+    //for (int i = 0; i < 30; i++) {
+    //  c.a = i / 29.0f;
+    //  waveName.color = c;
+    //  yield return new WaitForSeconds(0.05f);
+    //}
+  }
+
+  IEnumerator ScreenShake() {
+    Vector3 original = camera.transform.position;
+
+    float shakeEffect = 1;
+
+    while (shakeEffect > 0) {
+      camera.transform.position = (Random.insideUnitSphere * (shakeEffect/10))+(Vector3.forward*original.z);
+      shakeEffect -= Time.deltaTime;
+      yield return new WaitForEndOfFrame();
     }
+
+    camera.transform.position = original;
+  }
+
+  public static IEnumerator loadSceneAsync(string scene) {
+    AsyncOperation async = SceneManager.LoadSceneAsync(scene);
+    while (!async.isDone) {
+      yield return null;
+    }
+  }
+
+  public void RetryClicked() {
+    loadingScreen.SetActive(true);
+    StartCoroutine(loadSceneAsync(SceneManager.GetActiveScene().name));
+  }
+
+  public void ExitClicked() {
+    loadingScreen.SetActive(true);
+    StartCoroutine(loadSceneAsync("TitleScreen"));
   }
 }

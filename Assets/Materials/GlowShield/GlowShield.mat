@@ -25,8 +25,8 @@ Material:
         name: _CrackedTex
       second:
         m_Texture: {fileID: 2800000, guid: 3f6afe8479cd51f48beb670e89f5f7e9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 1.6, y: -0.07}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 2.58, y: -0.07}
     - first:
         name: _DetailAlbedoMap
       second:
@@ -81,7 +81,7 @@ Material:
       second: 1
     - first:
         name: _CrackedIntensity
-      second: 0.286
+      second: 1
     - first:
         name: _Cutoff
       second: 0.5
@@ -133,7 +133,7 @@ Material:
       second: {r: 0.2324827, g: 0.3345185, b: 0.63235295, a: 0}
     - first:
         name: _CrackedColor
-      second: {r: 1, g: 1, b: 1, a: 0}
+      second: {r: 1, g: 0.52205884, b: 0.52205884, a: 1}
     - first:
         name: _DamagedColor
       second: {r: 0.9413793, g: 0, b: 0, a: 0.228}

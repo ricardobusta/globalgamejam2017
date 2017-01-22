@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotatingPlanet : MonoBehaviour {
+  public Vector3 delta = new Vector3(1, 30, 0);
+
 	void Update () {
-    transform.Rotate(Time.deltaTime, 30*Time.deltaTime, 0);
+    transform.Rotate(delta*Time.deltaTime);
 	}
 }

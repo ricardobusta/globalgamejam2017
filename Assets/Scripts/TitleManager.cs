@@ -16,6 +16,7 @@ public class TitleManager : MonoBehaviour {
   public GameObject titleScreen;
   public GameObject creditsScreen;
   public GameObject scoreScreen;
+  public GameObject loadingScreen;
 
   GameObject currentScreen;
 
@@ -30,14 +31,6 @@ public class TitleManager : MonoBehaviour {
   public void StartGame() {
     StartCoroutine(GoToScreen(gamePosition.position, null, true));
   }
-
-  IEnumerator loadSceneAsync(string scene) {
-    AsyncOperation async = SceneManager.LoadSceneAsync(scene);
-    while (!async.isDone) {
-      yield return null;
-    }
-  }
-
 
   public void ExitGame() {
     Application.Quit();
@@ -65,7 +58,8 @@ public class TitleManager : MonoBehaviour {
     if (!startGame) {
       currentScreen.SetActive(true);
     }else {
-      yield return loadSceneAsync("GameScene");
+      loadingScreen.SetActive(true);
+      yield return GameManager.loadSceneAsync("GameScene");
     }
   }
 

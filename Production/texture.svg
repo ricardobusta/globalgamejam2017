@@ -20,6 +20,18 @@
   <defs
      id="defs4">
     <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4458">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.5535714"
+         offset="0"
+         id="stop4460" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop4462" />
+    </linearGradient>
+    <linearGradient
        id="linearGradient8645"
        inkscape:collect="always">
       <stop
@@ -295,17 +307,39 @@
        fx="533.15857"
        fy="730.54553"
        r="7.2454481" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4458"
+       id="radialGradient4464"
+       cx="142.83557"
+       cy="664.16052"
+       fx="142.83557"
+       fy="664.16052"
+       r="93.630989"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.90937521,0,0,0.90937521,12.944444,60.189408)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4458"
+       id="radialGradient4468"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.6247616,0,0,0.6247616,53.597391,249.21853)"
+       cx="142.83557"
+       cy="664.16052"
+       fx="142.83557"
+       fy="664.16052"
+       r="93.630989" />
   </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#ffffff"
+     pagecolor="#235419"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="578.29537"
-     inkscape:cy="108.97889"
+     inkscape:cx="295.45267"
+     inkscape:cy="247.57182"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -323,7 +357,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -3072,5 +3106,23 @@
        cx="737.70392"
        id="ellipse8613"
        style="opacity:1;fill:url(#radialGradient8631);fill-opacity:1;stroke:#000000;stroke-width:2.11380577;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <circle
+       style="opacity:1;fill:url(#radialGradient4464);fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path4456"
+       cx="142.83557"
+       cy="664.16052"
+       r="92.630989"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\PowerupGlow.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <circle
+       r="63.63961"
+       cy="664.16052"
+       cx="142.83557"
+       id="circle4466"
+       style="opacity:1;fill:url(#radialGradient4468);fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="D:\Ricardo\Global-Game-Jam-2017\Assets\Textures\PowerupGlow.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
   </g>
 </svg>
