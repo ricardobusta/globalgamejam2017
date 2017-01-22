@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BasicEnemy : MonoBehaviour {
-  Collider collider;
-
   public float breakRadius;
   public float speed;
 
@@ -20,11 +18,14 @@ public class BasicEnemy : MonoBehaviour {
 
   bool deaccelerate = false;
 
+<<<<<<< HEAD
   void Start() {
     collider = GetComponent<Collider>();
     _tr = GetComponent<Transform>();
   }
 
+=======
+>>>>>>> 9a1091e1f07624ccf06745986f1618768b95f237
   float outInCubic(float t) {
     if (t < (0.5f)) {
       return 0.5f * (Mathf.Pow(t * 2 - 1, 3) + 1);
@@ -57,7 +58,7 @@ public class BasicEnemy : MonoBehaviour {
       Destroy(gameObject);
     } else if (other.tag == "Player Bullets") {
       GameManager m = GameManager.Instance();
-      if (Mathf.Abs(transform.position.y) < 0.7f && Mathf.Abs(transform.position.x) < 0.95f) {
+      if (Mathf.Abs(transform.position.y) < 0.7f && Mathf.Abs(transform.position.x) < 1.23) {
 
         // Gets a number between 0 and the probability. Spawns when gets a zero.
         bool spawnHP = (Random.Range(0.0f, 1.0f) <= hPSpawnProbability);

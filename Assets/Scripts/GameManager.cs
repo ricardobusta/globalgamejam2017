@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -54,6 +55,13 @@ public class GameManager : MonoBehaviour {
 
   public ExplosionManager explosion;
 
+  public GameObject scoresScreen;
+  public Text scores;
+
+  public Text story;
+
+  bool userPressedSkip = false;
+
   public static GameManager Instance() {
     if (_instance == null) {
       _instance = FindObjectOfType<GameManager>();
@@ -77,10 +85,14 @@ public class GameManager : MonoBehaviour {
     shieldRenderer.gameObject.SetActive(true);
     shieldRenderer.material.SetFloat("_CrackedIntensity", 0);
     gameOverScreen.SetActive(false);
+    scoresScreen.SetActive(false);
   }
 
   void Update() {
     if (gameOver) {
+      if (Input.GetMouseButton(0) || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) {
+        userPressedSkip = true;
+      }
       return;
     }
     currentShootCooldown -= Time.deltaTime;
@@ -89,14 +101,14 @@ public class GameManager : MonoBehaviour {
     if (Input.GetMouseButton(0)) {
       PlayerClickedControl();
       PlayerShoot();
-    }else if(h!=0 || v != 0) {
+    } else if (h != 0 || v != 0) {
       PlayerDirectionControl(new Vector3(h, v, 0).normalized);
       PlayerShoot();
     }
     player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, playerSpeed * 100 * Time.deltaTime);
 
     if (enemyList.Count == 0 && (!waveSpawner.spawning)) {
-        waveSpawner.releaseWave = true;
+      waveSpawner.releaseWave = true;
     }
     waveSpawner.Handle();
     foreach (BasicEnemy e in enemyList) {
@@ -108,16 +120,40 @@ public class GameManager : MonoBehaviour {
   }
 
   IEnumerator StartSequence() {
+    story.gameObject.SetActive(true);
     float i = 0;
     Vector3 bgsize = new Vector3(2.8f, 1.4f, 1);
+    camera.orthographicSize = 0.7f * 6;
+    background.transform.localScale = bgsize * 6;
     while (i < 1) {
+      story.color = new Color(1, 1, 1, i);
       i += Time.deltaTime;
-      float l = Mathf.Lerp(6 , 1, Mathf.Sin(i * Mathf.PI / 2));
+      yield return new WaitForEndOfFrame();
+    }
+    i = 0;
+    while (i < 2) {
+      if (userPressedSkip) {
+        break;
+      }
+      yield return new WaitForEndOfFrame();
+    }
+    i = 0;
+    while (i < 1) {
+      story.color = new Color(1, 1, 1, 1 - i);
+      i += Time.deltaTime;
+      yield return new WaitForEndOfFrame();
+    }
+    story.gameObject.SetActive(false);
+    i = 0;
+    while (i < 1) {
+      float l = Mathf.Lerp(6, 1, Mathf.Sin(i * Mathf.PI / 2));
       camera.orthographicSize = 0.7f * l;
       background.transform.localScale = bgsize * l;
       yield return new WaitForEndOfFrame();
+      i += Time.deltaTime;
     }
     camera.orthographicSize = 0.7f;
+    background.transform.localScale = bgsize;
     gameOver = false;
     playerHealthDisplay.SetActive(true);
   }
@@ -208,10 +244,10 @@ public class GameManager : MonoBehaviour {
 
     Image[] images = gameOverScreen.GetComponentsInChildren<Image>();
     Text[] texts = gameOverScreen.GetComponentsInChildren<Text>();
-    foreach(Image i in images) {
+    foreach (Image i in images) {
       i.color = new Color(1, 1, 1, 0);
     }
-    foreach(Text t in texts) {
+    foreach (Text t in texts) {
       t.color = new Color(1, 1, 0, 0);
     }
 
@@ -230,6 +266,31 @@ public class GameManager : MonoBehaviour {
       }
       yield return new WaitForSeconds(0.05f);
     }
+    scoresScreen.SetActive(true);
+    scores.text = UpdateScores();
+  }
+
+  public string UpdateScores() {
+    int[] s = new int[10];
+    for (int i = 0; i < 10; i++) {
+      s[i] = PlayerPrefs.GetInt("PlayerScore" + i, 0);
+    }
+    if (score > s[0]) {
+      s[0] = score;
+      Array.Sort(s);
+    }
+    for (int i = 0; i < 10; i++) {
+      PlayerPrefs.SetInt("PlayerScore" + i, s[i]);
+    }
+    return GetScores(5);
+  }
+
+  static public string GetScores(int max) {
+    string result = "";
+    for (int i = 0; i < max; i++) {
+      result += PlayerPrefs.GetInt("PlayerScore" + (9 - i), 0).ToString("000000") + '\n';
+    }
+    return result;
   }
 
   IEnumerator ScreenShake() {
@@ -239,7 +300,7 @@ public class GameManager : MonoBehaviour {
     float shakeEffect = 1;
 
     while (shakeEffect > 0) {
-      camera.transform.position = (Random.insideUnitSphere * (shakeEffect/10))+(Vector3.forward*original.z);
+      camera.transform.position = (UnityEngine.Random.insideUnitSphere * (shakeEffect / 10)) + (Vector3.forward * original.z);
       shakeEffect -= Time.deltaTime;
       yield return new WaitForEndOfFrame();
     }
