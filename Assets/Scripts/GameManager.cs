@@ -87,8 +87,8 @@ public class GameManager : MonoBehaviour {
     }
     player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, playerSpeed * 100 * Time.deltaTime);
 
-    if (enemyList.Count == 0) {
-      waveSpawner.releaseWave = true;
+    if (enemyList.Count == 0 && (!waveSpawner.spawning)) {
+        waveSpawner.releaseWave = true;
     }
     waveSpawner.Handle();
     foreach (BasicEnemy e in enemyList) {
