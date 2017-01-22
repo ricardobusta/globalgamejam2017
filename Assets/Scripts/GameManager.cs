@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
   public MeshRenderer shieldRenderer;
 
   public int playerMaxHealth = 10;
-  int playerHealth;
+  public int playerHealth;
   public Text playerHealthText;
   public GameObject debris;
 
@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour {
     if (playerHealth > 0) {
       playerHealth -= dmg;
       playerHealthText.text = playerHealth.ToString("00");
-      shieldRenderer.material.SetFloat("_CrackedIntensity", 1 - ((float)playerHealth / (float)playerMaxHealth));
+      shieldRenderer.material.SetFloat("_CrackedIntensity", Mathf.Clamp01(1 - ((float)playerHealth / (float)playerMaxHealth)));
     } else {
       gameOver = true;
       playerHealthDisplay.SetActive(false);
@@ -138,7 +138,9 @@ public class GameManager : MonoBehaviour {
       shieldRenderer.gameObject.SetActive(false);
       StartCoroutine(ShowGameOver());
     }
-    StartCoroutine(ScreenShake());
+
+    if (dmg > 0)
+        StartCoroutine(ScreenShake());
   }
 
   public void AwardPoints(int points) {

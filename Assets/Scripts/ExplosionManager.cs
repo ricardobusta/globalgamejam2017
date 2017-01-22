@@ -31,7 +31,7 @@ public class ExplosionManager : MonoBehaviour {
     float t = 0;
     while (t<1) {
       t += Time.deltaTime*3;
-      Debug.Log(t);
+      //Debug.Log(t);
       e.transform.localScale = Vector3.one * t * scale;
       yield return new WaitForEndOfFrame();
     }

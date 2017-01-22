@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4440771998444314}
   - component: {fileID: 33716146371130104}
   - component: {fileID: 23540866689401582}
+  - component: {fileID: 65271870645869494}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -53,6 +54,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4887535334455434}
+  - component: {fileID: 114637236451907720}
+  - component: {fileID: 114431892864121960}
+  - component: {fileID: 65891690406597494}
   m_Layer: 0
   m_Name: Health Powerup
   m_TagString: Untagged
@@ -123,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1433143232491604}
   m_LocalRotation: {x: -0.0067239692, y: -0.44911695, z: 0.6625035, w: -0.59944797}
-  m_LocalPosition: {x: 0.6786, y: 0.064, z: -0.74582887}
+  m_LocalPosition: {x: 0.37558362, y: -0.27998766, z: -0.000000030132718}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4440771998444314}
@@ -246,3 +250,52 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1895359619250396}
   m_Mesh: {fileID: 4300004, guid: bd704fddb81d88d42b155c86e61143f9, type: 3}
+--- !u!65 &65271870645869494
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236631065335394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.019999998, z: 0.019999996}
+  m_Center: {x: 0, y: 0.000000007450581, z: 0}
+--- !u!65 &65891690406597494
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433143232491604}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.019999998, z: 0.019999996}
+  m_Center: {x: 0, y: 0.000000007450581, z: 0}
+--- !u!114 &114431892864121960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433143232491604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a19717a6b3f962b41b6758f7b62464b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delta: {x: 1, y: 30, z: 0}
+--- !u!114 &114637236451907720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433143232491604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef9a70aca5cffc4fbadb7ad32b1b7fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.01
+  hPIncrease: 1

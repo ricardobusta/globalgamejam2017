@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Planet
   - Player Bullets
+  - Moon
   layers:
   - Default
   - TransparentFX
