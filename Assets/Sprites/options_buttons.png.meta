@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6c5edb967411fa7428ccbf7049fce779
-timeCreated: 1485136124
+timeCreated: 1485139336
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,8 @@ TextureImporter:
     21300008: options_buttons_7
     21300010: options_buttons_8
     21300012: options_buttons_3
+    21300014: options_buttons_4
+    21300016: options_buttons_5
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -105,11 +107,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3
-        y: 101
+        y: 106
         width: 46
-        height: 46
+        height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -118,11 +120,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2
-        y: 52
+        y: 56
         width: 38
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -131,7 +133,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 53
-        y: 53
+        y: 56
         width: 57
         height: 44
       alignment: 0
@@ -144,7 +146,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 4
+        y: 8
         width: 61
         height: 40
       alignment: 0
@@ -157,11 +159,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 70
-        y: 0
+        y: 3
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -170,11 +172,37 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 52
-        y: 100
-        width: 62
-        height: 46
+        y: 104
+        width: 61
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: options_buttons_4
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 53
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: options_buttons_5
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

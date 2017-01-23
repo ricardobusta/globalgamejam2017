@@ -62,6 +62,12 @@ public class GameManager : MonoBehaviour {
 
   bool userPressedSkip = false;
 
+  public Toggle pauseButton;
+
+  int controlType;
+
+  float sideSpeed;
+
   public static GameManager Instance() {
     if (_instance == null) {
       _instance = FindObjectOfType<GameManager>();
@@ -70,6 +76,8 @@ public class GameManager : MonoBehaviour {
   }
 
   void Start() {
+    controlType = PlayerPrefs.GetInt("controlOption", 0);
+    pauseButton.gameObject.SetActive(false);
     currentShootCooldown = shootCooldown;
     playerHealth = playerMaxHealth;
     for (int i = 0; i < 30; i++) {
@@ -89,6 +97,9 @@ public class GameManager : MonoBehaviour {
   }
 
   void Update() {
+    if (pauseButton.isOn) {
+      return;
+    }
     if (gameOver) {
       if (Input.GetMouseButton(0) || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) {
         userPressedSkip = true;
@@ -96,16 +107,36 @@ public class GameManager : MonoBehaviour {
       return;
     }
     currentShootCooldown -= Time.deltaTime;
+    float maxSpeed = playerSpeed * 100 * Time.deltaTime;
     float h = Input.GetAxis("Horizontal");
     float v = Input.GetAxis("Vertical");
     if (Input.GetMouseButton(0)) {
       PlayerClickedControl();
       PlayerShoot();
+      player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, maxSpeed);
     } else if (h != 0 || v != 0) {
-      PlayerDirectionControl(new Vector3(h, v, 0).normalized);
-      PlayerShoot();
+      if (controlType == 0) {
+        PlayerDirectionControl(new Vector3(h, v, 0).normalized);
+        PlayerShoot();
+        player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, maxSpeed);
+      }
     }
-    player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, playerSpeed * 100 * Time.deltaTime);
+
+    if (controlType == 1) {
+      if (h != 0) {
+        sideSpeed += Time.deltaTime * h / 2;
+        Mathf.Clamp(sideSpeed, -maxSpeed, maxSpeed);
+        player.transform.localRotation = player.transform.localRotation * Quaternion.Euler(0, h * maxSpeed, 0);
+        Debug.Log("Side");
+      } else {
+        sideSpeed = 0;
+        Debug.Log("Stop"+h);
+        player.transform.localRotation = player.transform.localRotation * Quaternion.Euler(0, 0,0);
+      }
+      if (v != 0) {
+        PlayerShoot();
+      }
+    }
 
     if (enemyList.Count == 0 && (!waveSpawner.spawning)) {
       waveSpawner.releaseWave = true;
@@ -156,6 +187,7 @@ public class GameManager : MonoBehaviour {
     background.transform.localScale = bgsize;
     gameOver = false;
     playerHealthDisplay.SetActive(true);
+    pauseButton.gameObject.SetActive(true);
   }
 
   float AngleSign(Vector2 v1, Vector2 v2) {
@@ -176,7 +208,7 @@ public class GameManager : MonoBehaviour {
     }
 
     if (dmg > 0)
-        StartCoroutine(ScreenShake());
+      StartCoroutine(ScreenShake());
   }
 
   public void AwardPoints(int points) {

@@ -29,6 +29,8 @@ public class TitleManager : MonoBehaviour {
   public Toggle soundOption;
   public Toggle musicOption;
 
+  public Toggle[] controlType;
+
   public AudioSource musicSource;
   public AudioSource soundSource;
 
@@ -49,6 +51,7 @@ public class TitleManager : MonoBehaviour {
     musicOption.isOn = (PlayerPrefs.GetInt("muteMusic", 0)==1);
     soundSource.mute = soundOption.isOn;
     musicSource.mute = musicOption.isOn;
+    controlType[PlayerPrefs.GetInt("controlOption", 0)].isOn = true;
   }
 
   public void StartGame() {
@@ -92,15 +95,17 @@ public class TitleManager : MonoBehaviour {
     StartCoroutine(GoToScreen(scorePosition.position, scoreScreen, scoreButton));
   }
 
-  public void ToggleSound(bool t) {
+  public void ToggleSound() {
     PlayerPrefs.SetInt("muteSound", soundOption.isOn ? 1:0);
-    PlayerPrefs.Save();
     soundSource.mute = soundOption.isOn;
   }
 
-  public void ToggleMusic(bool t) {
+  public void ToggleMusic() {
     PlayerPrefs.SetInt("muteMusic", musicOption.isOn ? 1 : 0);
-    PlayerPrefs.Save();
     musicSource.mute = musicOption.isOn;
+  }
+
+  public void SelectControl(int c) {
+    PlayerPrefs.SetInt("controlOption", c);
   }
 }

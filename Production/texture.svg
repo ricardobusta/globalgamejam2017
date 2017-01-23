@@ -689,9 +689,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="15.899544"
-     inkscape:cy="628.21942"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="425.58008"
+     inkscape:cy="641.80825"
      inkscape:document-units="px"
      inkscape:current-layer="g4574"
      showgrid="false"
@@ -3886,9 +3886,57 @@
       </g>
       <path
          style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:12.35079861;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="M 39.994141 -410.9668 L -63.054688 -379.63477 L -63.054688 -370.5 L -63.054688 -341.13477 L -63.054688 -281.98828 C -67.957144 -283.99141 -73.404467 -285.04122 -78.935547 -285.04883 C -97.950014 -285.04829 -113.36378 -272.9915 -113.36328 -258.11914 C -113.36239 -243.24754 -97.949035 -231.19195 -78.935547 -231.19141 C -59.983668 -231.19441 -44.598402 -243.17674 -44.513672 -258 L -44.505859 -258 L -44.505859 -346.77539 L 21.445312 -366.82617 L 21.445312 -318.48828 C 16.542856 -320.49141 11.095533 -321.54122 5.5644531 -321.54883 C -13.450014 -321.54829 -28.86378 -309.4915 -28.863281 -294.61914 C -28.862396 -279.74754 -13.449035 -267.69195 5.5644531 -267.69141 C 24.516332 -267.69441 39.901598 -279.67674 39.986328 -294.5 L 39.994141 -294.5 L 39.994141 -294.61914 L 39.994141 -372.4668 L 39.994141 -376.5 L 39.994141 -410.9668 z "
+         d="m 993.15864,-284.27433 -76.9567,23.3987 0,6.8218 0,21.9299 0,44.1705 c -3.6612,-1.496 -7.7292,-2.28 -11.8598,-2.2856 -14.2,0 -25.7109,9.0043 -25.7106,20.111 0,11.1061 11.5114,20.1092 25.7106,20.1096 14.1532,0 25.6429,-8.9507 25.7062,-20.0206 l 0.01,0 0,-66.2973 49.2522,-14.9739 0,36.0986 c -3.6612,-1.4959 -7.7292,-2.2799 -11.8598,-2.2856 -14.2,0 -25.7109,9.0044 -25.7106,20.1111 0,11.1061 11.5114,20.1091 25.7106,20.1095 14.1532,0 25.6429,-8.9506 25.7062,-20.0206 l 0.01,0 0,-0.089 0,-58.1365 0,-3.012 0,-25.7397 z"
+         id="path4555"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\options_buttons.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 1113.5311,-285.50476 -44.0859,44.0859 -32.6476,0 0,45.9281 32.6476,0 44.0859,44.0859 0,-134.0999 z m 29.605,4.1322 a 62.917379,62.917379 0 0 0 -7.3294,0.5076 62.917379,62.917379 0 0 1 55.3622,62.4101 62.917379,62.917379 0 0 1 -55.5883,62.4102 62.917379,62.917379 0 0 0 7.5555,0.5076 62.917379,62.917379 0 0 0 62.9163,-62.9178 62.917379,62.917379 0 0 0 -62.9163,-62.9177 z m -12.6445,21.3363 a 41.581922,41.581922 0 0 0 -4.8425,0.3354 41.581922,41.581922 0 0 1 36.5872,41.246 41.581922,41.581922 0 0 1 -36.7375,41.2461 41.581922,41.581922 0 0 0 4.9928,0.3354 41.581922,41.581922 0 0 0 41.5815,-41.5815 41.581922,41.581922 0 0 0 -41.5815,-41.5814 z m -7.573,23.5241 a 18.057785,18.057785 0 0 0 -2.1033,0.1459 18.057785,18.057785 0 0 1 15.8884,17.9114 18.057785,18.057785 0 0 1 -15.954,17.9115 18.057785,18.057785 0 0 0 2.1689,0.1459 18.057785,18.057785 0 0 0 18.0573,-18.0574 18.057785,18.057785 0 0 0 -18.0573,-18.0573 z"
+         id="rect4607"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\options_buttons.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="opacity:1;fill:#aa0000;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 903.41714,-441.85463 -22.1793,22.1779 48.0547,48.0547 -48.0547,48.0547 22.1779,22.1779 48.0547,-48.0547 48.0547,48.0547 22.17776,-22.1779 -48.05466,-48.0547 48.05466,-48.0547 -22.17776,-22.1779 -48.0547,48.0547 -48.0533,-48.0547 z"
+         id="rect4624"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\options_buttons.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 1162.3444,-133.40373 a 72.769701,72.769701 0 0 0 -72.7694,72.769401 72.769701,72.769701 0 0 0 72.7694,72.7704 72.769701,72.769701 0 0 0 72.7704,-72.7704 72.769701,72.769701 0 0 0 -72.7704,-72.769401 z m 0,11.5506 a 61.218957,61.218957 0 0 1 61.2199,61.218801 61.218957,61.218957 0 0 1 -61.2199,61.21979991 61.218957,61.218957 0 0 1 -61.2188,-61.21979991 61.218957,61.218957 0 0 1 61.2188,-61.218801 z m -1.5399,15.863 c -24.4584,0.8298 -43.8649,20.883301 -43.8924,45.355801 -3e-4,25.0918 20.3404,45.433 45.4323,45.4334 23.0698,-0.014 42.3655,-17.2958 45.0739,-40.0426 l 14.4561,0 -26.8021,-26.801 -26.8021,26.801 16.5671,0 c -2.4485,10.2949 -11.6846,17.7867 -22.5312,17.7869 -12.7947,-2e-4 -23.1662,-10.3724 -23.166,-23.1671 0.01,-12.4259 9.8165,-22.6322 22.2323,-23.1331 l -0.5679,-22.233301 z"
+         id="path4629"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\options_buttons.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 871.08427,-123.29493 0,122.51140091 88.1587,0 0,-122.51140091 -88.1587,0 z m 100.071,0 0,122.51140091 88.15863,0 0,-122.51140091 -88.15863,0 z m -88.869,11.202 65.7548,0 0,100.107401 -65.7548,0 0,-100.107401 z m 100.0709,0 65.75473,0 0,100.107401 -65.75473,0 0,-100.107401 z m -45.8069,7.2798 -42.7732,42.774601 42.7732,42.7732 0,-85.547801 z m 57.2978,0 0,85.547801 42.77303,-42.7732 -42.77303,-42.774601 z"
+         id="rect4644"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\options_buttons.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="opacity:1;fill:#00aa44;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 1199.0311,-438.56011 -96.0082,96.00816 -48.0583,-48.05835 -22.1748,22.18077 70.2331,70.23309 118.0985,-118.10451 -0.018,-0.18693 -22.0722,-22.07223 z"
+         id="path4664"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\options_buttons.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 532.00781 -411.05273 C 518.99184 -411.05268 508.43952 -400.50033 508.43945 -387.48438 C 508.43932 -374.46829 518.99171 -363.91802 532.00781 -363.91797 C 545.02401 -363.91784 555.57435 -374.46817 555.57422 -387.48438 C 555.57415 -400.50046 545.02391 -411.05286 532.00781 -411.05273 z M 532.00781 -407.3125 C 542.95791 -407.31267 551.83395 -398.43447 551.83398 -387.48438 C 551.83415 -376.53416 542.95804 -367.65803 532.00781 -367.6582 C 521.05772 -367.65823 512.17953 -376.53429 512.17969 -387.48438 C 512.17972 -398.43433 521.05785 -407.31247 532.00781 -407.3125 z M 522.13477 -399.56641 L 522.13477 -375.4043 L 528.63086 -375.4043 L 528.63086 -399.56641 L 522.13477 -399.56641 z M 535.38477 -399.56641 L 535.38477 -375.4043 L 541.88086 -375.4043 L 541.88086 -399.56641 L 535.38477 -399.56641 z "
          transform="matrix(3.0876996,0,0,3.0876996,-331.86772,984.06129)"
-         id="path4555" />
+         id="rect4674" />
     </g>
   </g>
 </svg>
