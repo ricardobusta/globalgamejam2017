@@ -689,9 +689,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="425.58008"
-     inkscape:cy="641.80825"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="383.09467"
+     inkscape:cy="630.85015"
      inkscape:document-units="px"
      inkscape:current-layer="g4574"
      showgrid="false"
@@ -3936,7 +3936,18 @@
          style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 532.00781 -411.05273 C 518.99184 -411.05268 508.43952 -400.50033 508.43945 -387.48438 C 508.43932 -374.46829 518.99171 -363.91802 532.00781 -363.91797 C 545.02401 -363.91784 555.57435 -374.46817 555.57422 -387.48438 C 555.57415 -400.50046 545.02391 -411.05286 532.00781 -411.05273 z M 532.00781 -407.3125 C 542.95791 -407.31267 551.83395 -398.43447 551.83398 -387.48438 C 551.83415 -376.53416 542.95804 -367.65803 532.00781 -367.6582 C 521.05772 -367.65823 512.17953 -376.53429 512.17969 -387.48438 C 512.17972 -398.43433 521.05785 -407.31247 532.00781 -407.3125 z M 522.13477 -399.56641 L 522.13477 -375.4043 L 528.63086 -375.4043 L 528.63086 -399.56641 L 522.13477 -399.56641 z M 535.38477 -399.56641 L 535.38477 -375.4043 L 541.88086 -375.4043 L 541.88086 -399.56641 L 535.38477 -399.56641 z "
          transform="matrix(3.0876996,0,0,3.0876996,-331.86772,984.06129)"
-         id="rect4674" />
+         id="rect4674"
+         inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\options_buttons.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
+      <path
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 1323.0979,-122.80541 a 73.141641,73.141641 0 0 0 -73.1389,73.14406 73.141641,73.141641 0 0 0 73.1389,73.138948 73.141641,73.141641 0 0 0 73.1441,-73.138948 73.141641,73.141641 0 0 0 -73.1441,-73.14406 z m 0,12.96044 a 60.179832,60.179832 0 0 1 60.1785,60.18362 60.179832,60.179832 0 0 1 -60.1785,60.178521 60.179832,60.179832 0 0 1 -60.1785,-60.178521 60.179832,60.179832 0 0 1 60.1785,-60.18362 z m 7.406,8.33682 a 40.737116,40.737116 0 0 0 -40.7327,40.732752 40.737116,40.737116 0 0 0 40.7327,40.737876 40.737116,40.737116 0 0 0 40.7379,-40.737876 40.737116,40.737116 0 0 0 -40.7379,-40.732752 z"
+         id="path4687"
+         inkscape:connector-curvature="0"
+         inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\options_buttons.png"
+         inkscape:export-xdpi="90"
+         inkscape:export-ydpi="90" />
     </g>
   </g>
 </svg>
