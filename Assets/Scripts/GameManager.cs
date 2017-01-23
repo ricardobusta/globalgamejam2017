@@ -282,6 +282,7 @@ public class GameManager : MonoBehaviour {
     for (int i = 0; i < 10; i++) {
       PlayerPrefs.SetInt("PlayerScore" + i, s[i]);
     }
+    PlayerPrefs.Save();
     return GetScores(5);
   }
 

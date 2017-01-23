@@ -26,6 +26,12 @@ public class TitleManager : MonoBehaviour {
 
   public EventSystem eventSystem;
 
+  public Toggle soundOption;
+  public Toggle musicOption;
+
+  public AudioSource musicSource;
+  public AudioSource soundSource;
+
   GameObject currentScreen;
 
   public Text score;
@@ -39,6 +45,10 @@ public class TitleManager : MonoBehaviour {
     camera.transform.position = titlePosition.position;
     currentScreen = titleScreen;
     score.text = GameManager.GetScores(10);
+    soundOption.isOn = (PlayerPrefs.GetInt("muteSound", 0)==1);
+    musicOption.isOn = (PlayerPrefs.GetInt("muteMusic", 0)==1);
+    soundSource.mute = soundOption.isOn;
+    musicSource.mute = musicOption.isOn;
   }
 
   public void StartGame() {
@@ -80,5 +90,17 @@ public class TitleManager : MonoBehaviour {
 
   public void ShowScore() {
     StartCoroutine(GoToScreen(scorePosition.position, scoreScreen, scoreButton));
+  }
+
+  public void ToggleSound(bool t) {
+    PlayerPrefs.SetInt("muteSound", soundOption.isOn ? 1:0);
+    PlayerPrefs.Save();
+    soundSource.mute = soundOption.isOn;
+  }
+
+  public void ToggleMusic(bool t) {
+    PlayerPrefs.SetInt("muteMusic", musicOption.isOn ? 1 : 0);
+    PlayerPrefs.Save();
+    musicSource.mute = musicOption.isOn;
   }
 }
