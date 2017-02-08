@@ -7,11 +7,11 @@ public class BasicEnemy : MonoBehaviour {
   public float speed;
 
   public int pointsWorth = 10;
-    [Range(0, 1)]
-    public float hPSpawnProbability = 5;
-    public HealthPack healthPackPrefab;
+  [Range(0, 1)]
+  public float hPSpawnProbability = 5;
+  public HealthPack healthPackPrefab;
 
-    private Transform _tr;
+  private Transform _tr;
   float interp = 0;
   Vector3 strikePosition;
   Vector3 targetPosition;
@@ -59,7 +59,7 @@ public class BasicEnemy : MonoBehaviour {
         // Gets a number between 0 and the probability. Spawns when gets a zero.
         bool spawnHP = (Random.Range(0.0f, 1.0f) <= hPSpawnProbability);
         if (spawnHP)
-            Instantiate(healthPackPrefab).transform.position = _tr.position;
+          Instantiate(healthPackPrefab).transform.position = _tr.position;
 
         m.explosion.playExplosion(transform.position);
         m.soundManager.playEnemyHit();

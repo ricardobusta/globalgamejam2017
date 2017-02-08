@@ -67,6 +67,17 @@ public class GameManager : MonoBehaviour {
   int controlType;
 
   float sideSpeed;
+  float sideSpeedTouch;
+
+  public GameObject pauseScreen;
+
+  public GameObject directionHelper;
+  public GameObject virtualAnalogBase;
+  public GameObject virtualAnalogStick;
+
+  Vector3 virtualAnalogPos;
+
+  public RectTransform canvasTransform;
 
   public static GameManager Instance() {
     if (_instance == null) {
@@ -94,6 +105,10 @@ public class GameManager : MonoBehaviour {
     shieldRenderer.material.SetFloat("_CrackedIntensity", 0);
     gameOverScreen.SetActive(false);
     scoresScreen.SetActive(false);
+    pauseScreen.SetActive(false);
+
+    directionHelper.SetActive(controlType == 2);
+    virtualAnalogBase.SetActive(false);
   }
 
   void Update() {
@@ -101,41 +116,85 @@ public class GameManager : MonoBehaviour {
       return;
     }
     if (gameOver) {
-      if (Input.GetMouseButton(0) || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) {
+      if (Input.GetMouseButton(0) || Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 || Input.GetAxis("Fire") != 0) {
         userPressedSkip = true;
       }
       return;
     }
     currentShootCooldown -= Time.deltaTime;
     float maxSpeed = playerSpeed * 100 * Time.deltaTime;
-    float h = Input.GetAxis("Horizontal");
-    float v = Input.GetAxis("Vertical");
-    if (Input.GetMouseButton(0)) {
-      PlayerClickedControl();
-      PlayerShoot();
+
+    /* Joystick Control */
+    float joyH = Input.GetAxis("Horizontal Analog");
+    float joyV = Input.GetAxis("Vertical Analog");
+    if (joyH != 0 || joyV != 0) {
+      PlayerDirectionControl(new Vector3(joyH, joyV, 0).normalized);
       player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, maxSpeed);
-    } else if (h != 0 || v != 0) {
-      if (controlType == 0) {
-        PlayerDirectionControl(new Vector3(h, v, 0).normalized);
-        PlayerShoot();
-        player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, maxSpeed);
-      }
+      goto FinishedControlManagement;
+    }
+    /* Keyboard Control */
+    float h = Input.GetAxis("Horizontal");
+    //float v = Input.GetAxis("Vertical");
+    if (h != 0) {
+      sideSpeed += Time.deltaTime * h * 20;
+      sideSpeed = Mathf.Clamp(sideSpeed, -maxSpeed, maxSpeed);
+      player.transform.localRotation = player.transform.localRotation * Quaternion.Euler(0, sideSpeed, 0);
+      goto FinishedControlManagement;
+    } else {
+      sideSpeed = 0;
+    }
+    /* Mouse Control */
+    switch (controlType) {
+      case 0:
+        /* Point Control Mode */
+        if (Input.GetMouseButton(0)) {
+          PlayerClickedControl();
+          player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, maxSpeed);
+          PlayerShoot();
+          goto FinishedControlManagement;
+        }
+        break;
+      case 1:
+        /* Virtual Analog Control Mode */
+        if (Input.GetMouseButtonDown(0)) {
+          virtualAnalogBase.SetActive(true);
+          virtualAnalogPos = Input.mousePosition;
+          virtualAnalogBase.transform.localPosition = new Vector3(canvasTransform.sizeDelta.x * (Input.mousePosition.x / Screen.width - 0.5f), canvasTransform.sizeDelta.y * (Input.mousePosition.y / Screen.height - 0.5f), 0);
+        } else if (Input.GetMouseButtonUp(0)) {
+          virtualAnalogBase.SetActive(false);
+        }
+        if (virtualAnalogBase.activeSelf && Input.GetMouseButton(0)) {
+          Vector3 dir = (Input.mousePosition - virtualAnalogPos).normalized;
+          virtualAnalogStick.transform.localPosition = 30 * dir;
+          PlayerDirectionControl(dir);
+          player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, maxSpeed);
+          PlayerShoot();
+          goto FinishedControlManagement;
+        }
+        break;
+      case 2:
+        /* Direction Pads Control Mode */
+        if (Input.GetMouseButton(0)) {
+          float mouseH = 2 * (Input.mousePosition.x / Screen.width) - 1;
+          float dir = (mouseH > 0.2) ? 1 : ((mouseH < -0.2) ? -1 : 0);
+          Debug.Log(dir);
+          if (dir != 0) {
+            sideSpeedTouch += Time.deltaTime * dir * 20;
+            sideSpeedTouch = Mathf.Clamp(sideSpeedTouch, -maxSpeed, maxSpeed);
+            player.transform.localRotation = player.transform.localRotation * Quaternion.Euler(0, sideSpeedTouch, 0);
+            goto FinishedControlManagement;
+          } else {
+            sideSpeedTouch = 0;
+          }
+        }
+        break;
     }
 
-    if (controlType == 1) {
-      if (h != 0) {
-        sideSpeed += Time.deltaTime * h / 2;
-        Mathf.Clamp(sideSpeed, -maxSpeed, maxSpeed);
-        player.transform.localRotation = player.transform.localRotation * Quaternion.Euler(0, h * maxSpeed, 0);
-        Debug.Log("Side");
-      } else {
-        sideSpeed = 0;
-        Debug.Log("Stop"+h);
-        player.transform.localRotation = player.transform.localRotation * Quaternion.Euler(0, 0,0);
-      }
-      if (v != 0) {
-        PlayerShoot();
-      }
+    FinishedControlManagement:
+
+    /* Fire if fire is pressed */
+    if (Input.GetAxis("Fire") != 0) {
+      PlayerShoot();
     }
 
     if (enemyList.Count == 0 && (!waveSpawner.spawning)) {
@@ -199,7 +258,7 @@ public class GameManager : MonoBehaviour {
 
     if (playerHealth > 0) {
       playerHealthText.text = playerHealth.ToString("00");
-      shieldRenderer.material.SetFloat("_CrackedIntensity", Mathf.Clamp01(1 - ((float)playerHealth / (float)playerMaxHealth)));
+      shieldRenderer.material.SetFloat("_CrackedIntensity", Mathf.Clamp01(1 - ((float)(playerHealth - 1) / (float)(playerMaxHealth - 1))));
     } else {
       playerHealth = 0;
       gameOver = true;
@@ -273,6 +332,8 @@ public class GameManager : MonoBehaviour {
   }
 
   IEnumerator ShowGameOver() {
+    directionHelper.SetActive(false);
+    virtualAnalogBase.SetActive(false);
     //Text waveName = GameManager.Instance().waveName;
     gameOverScreen.SetActive(true);
 
@@ -354,6 +415,10 @@ public class GameManager : MonoBehaviour {
     soundManager.buttonSound.Play();
     loadingScreen.SetActive(true);
     StartCoroutine(loadSceneAsync(SceneManager.GetActiveScene().name));
+  }
+
+  public void TogglePause() {
+    pauseScreen.SetActive(pauseButton.isOn);
   }
 
   public void ExitClicked() {

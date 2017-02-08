@@ -51,8 +51,8 @@ public class TitleManager : MonoBehaviour {
     camera.transform.position = titlePosition.position;
     currentScreen = titleScreen;
     score.text = GameManager.GetScores(10);
-    soundOption.isOn = (PlayerPrefs.GetInt("muteSound", 0)==1);
-    musicOption.isOn = (PlayerPrefs.GetInt("muteMusic", 0)==1);
+    soundOption.isOn = (PlayerPrefs.GetInt("muteSound", 0) == 1);
+    musicOption.isOn = (PlayerPrefs.GetInt("muteMusic", 0) == 1);
     soundSource.mute = soundOption.isOn;
     musicSource.mute = musicOption.isOn;
     controlType[PlayerPrefs.GetInt("controlOption", 0)].isOn = true;
@@ -89,7 +89,7 @@ public class TitleManager : MonoBehaviour {
     if (!startGame) {
       currentScreen.SetActive(true);
       eventSystem.SetSelectedGameObject(focusObject);
-    }else {
+    } else {
       loadingScreen.SetActive(true);
       yield return GameManager.loadSceneAsync("GameScene");
     }
@@ -104,7 +104,7 @@ public class TitleManager : MonoBehaviour {
   }
 
   public void ToggleSound() {
-    PlayerPrefs.SetInt("muteSound", soundOption.isOn ? 1:0);
+    PlayerPrefs.SetInt("muteSound", soundOption.isOn ? 1 : 0);
     soundSource.mute = soundOption.isOn;
   }
 

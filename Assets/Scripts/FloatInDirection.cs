@@ -6,7 +6,7 @@ public class FloatInDirection : MonoBehaviour {
 
   public Vector3 direction;
 
-	void Update () {
-    transform.position = transform.position + (direction*Time.deltaTime)/5;
-	}
+  void Update() {
+    transform.position = transform.position + (direction * Time.deltaTime) / 5;
+  }
 }

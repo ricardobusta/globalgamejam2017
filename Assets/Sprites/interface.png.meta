@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 39b0f16bc7138264186d3c3af6bf6fa0
-timeCreated: 1486535521
+timeCreated: 1486583272
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -23,6 +23,10 @@ TextureImporter:
     21300032: interface_8
     21300034: interface_17
     21300036: interface_18
+    21300038: interface_19
+    21300040: interface_20
+    21300042: interface_21
+    21300044: interface_22
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -119,9 +123,9 @@ TextureImporter:
         x: 0
         y: 480
         width: 844
-        height: 173
+        height: 172
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -134,7 +138,7 @@ TextureImporter:
         width: 400
         height: 152
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -145,9 +149,9 @@ TextureImporter:
         x: 444
         y: 320
         width: 400
-        height: 152
+        height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -160,7 +164,7 @@ TextureImporter:
         width: 230
         height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -169,11 +173,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 396
-        y: 251
+        y: 250
         width: 67
-        height: 51
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -182,11 +186,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 480
-        y: 241
+        y: 240
         width: 89
-        height: 70
+        height: 71
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -195,11 +199,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 583
-        y: 241
+        y: 240
         width: 61
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -212,7 +216,7 @@ TextureImporter:
         width: 231
         height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -221,11 +225,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 692
-        y: 169
+        y: 168
         width: 125
         height: 66
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -234,11 +238,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 692
-        y: 75
+        y: 74
         width: 125
         height: 84
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -247,11 +251,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 243
-        y: 217
+        y: 216
         width: 141
-        height: 94
+        height: 95
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -260,11 +264,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 693
-        y: 245
+        y: 244
         width: 124
-        height: 66
+        height: 67
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -277,7 +281,7 @@ TextureImporter:
         width: 230
         height: 151
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -285,12 +289,12 @@ TextureImporter:
       name: interface_8
       rect:
         serializedVersion: 2
-        x: 487
-        y: 110
-        width: 55
-        height: 55
+        x: 505
+        y: 167
+        width: 61
+        height: 61
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -298,12 +302,12 @@ TextureImporter:
       name: interface_14
       rect:
         serializedVersion: 2
-        x: 491
-        y: 4
-        width: 93
-        height: 93
+        x: 584
+        y: 146
+        width: 84
+        height: 86
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -312,11 +316,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 252
-        y: 160
+        y: 159
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -325,11 +329,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 308
-        y: 159
+        y: 158
         width: 48
-        height: 48
+        height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -338,11 +342,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 365
-        y: 160
+        y: 159
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -350,12 +354,64 @@ TextureImporter:
       name: interface_18
       rect:
         serializedVersion: 2
-        x: 559
-        y: 113
+        x: 661
+        y: 249
         width: 17
-        height: 54
+        height: 53
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: interface_19
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 195
+        width: 41
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: interface_20
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 161
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: interface_21
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 0
+        width: 142
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: interface_22
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 8
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

@@ -29,7 +29,7 @@ public class SoundManager : MonoBehaviour {
     playerShoot.mute = muteSound;
     damageReceived.mute = muteSound;
     powerup.mute = muteSound;
-    foreach(AudioSource a in enemyHit) {
+    foreach (AudioSource a in enemyHit) {
       a.mute = muteSound;
     }
   }

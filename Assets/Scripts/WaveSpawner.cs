@@ -45,7 +45,7 @@ public class WaveSpawner : MonoBehaviour {
     NONE = -1
   }
   public static int PATTERN_COUNT = 5;
-  EnumPattern currentPattern = (EnumPattern) PATTERN_COUNT;
+  EnumPattern currentPattern = (EnumPattern)PATTERN_COUNT;
 
   // Pattern getter
   public SpawnPattern getPattern(EnumPattern type) {
@@ -122,7 +122,7 @@ public class WaveSpawner : MonoBehaviour {
     SpawnPattern pattern = getPattern(type);
     PHASE = Random.Range(0.0f, 2.0f) * Mathf.PI;
 
-    int enemyCount = wave+2;
+    int enemyCount = wave + 2;
 
     spawning = true;
     StartCoroutine(SpawnDelayed(pattern, enemyCount, 0.4f));
