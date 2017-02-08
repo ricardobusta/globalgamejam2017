@@ -195,11 +195,13 @@ public class GameManager : MonoBehaviour {
   }
 
   public void Damage(int dmg) {
+    playerHealth -= dmg;
+
     if (playerHealth > 0) {
-      playerHealth -= dmg;
       playerHealthText.text = playerHealth.ToString("00");
       shieldRenderer.material.SetFloat("_CrackedIntensity", Mathf.Clamp01(1 - ((float)playerHealth / (float)playerMaxHealth)));
     } else {
+      playerHealth = 0;
       gameOver = true;
       playerHealthDisplay.SetActive(false);
       debris.SetActive(true);

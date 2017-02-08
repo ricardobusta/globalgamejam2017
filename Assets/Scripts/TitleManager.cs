@@ -14,15 +14,18 @@ public class TitleManager : MonoBehaviour {
   public Transform scorePosition;
   public Transform transitionPosition;
   public Transform gamePosition;
+  public Transform settingsPosition;
 
   public GameObject titleScreen;
   public GameObject creditsScreen;
   public GameObject scoreScreen;
   public GameObject loadingScreen;
+  public GameObject settingsScreen;
 
   public GameObject titleButton;
   public GameObject creditsButton;
   public GameObject scoreButton;
+  public GameObject settingsButton;
 
   public EventSystem eventSystem;
 
@@ -44,6 +47,7 @@ public class TitleManager : MonoBehaviour {
     titleScreen.SetActive(true);
     creditsScreen.SetActive(false);
     scoreScreen.SetActive(false);
+    settingsScreen.SetActive(false);
     camera.transform.position = titlePosition.position;
     currentScreen = titleScreen;
     score.text = GameManager.GetScores(10);
@@ -93,6 +97,10 @@ public class TitleManager : MonoBehaviour {
 
   public void ShowScore() {
     StartCoroutine(GoToScreen(scorePosition.position, scoreScreen, scoreButton));
+  }
+
+  public void ShowSettings() {
+    StartCoroutine(GoToScreen(settingsPosition.position, settingsScreen, settingsButton));
   }
 
   public void ToggleSound() {
