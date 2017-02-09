@@ -3394,7 +3394,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Busta Games - 2017
 
-    Version 1.1'
+    Version 1.1.1'
 --- !u!222 &1101344389
 CanvasRenderer:
   m_ObjectHideFlags: 0
