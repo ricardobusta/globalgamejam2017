@@ -70,7 +70,6 @@ public class GameManager : MonoBehaviour {
   float sideSpeedTouch;
 
   public GameObject pauseScreen;
-
   public GameObject directionHelper;
   public GameObject virtualAnalogBase;
   public GameObject virtualAnalogStick;
@@ -164,10 +163,14 @@ public class GameManager : MonoBehaviour {
           virtualAnalogBase.SetActive(false);
         }
         if (virtualAnalogBase.activeSelf && Input.GetMouseButton(0)) {
-          Vector3 dir = (Input.mousePosition - virtualAnalogPos).normalized;
-          virtualAnalogStick.transform.localPosition = 30 * dir;
-          PlayerDirectionControl(dir);
-          player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, maxSpeed);
+          if (Input.mousePosition != virtualAnalogPos) {
+            Vector3 dir = (Input.mousePosition - virtualAnalogPos).normalized;
+            virtualAnalogStick.transform.localPosition = 30 * dir;
+            PlayerDirectionControl(dir);
+            player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, maxSpeed);
+          }else {
+            virtualAnalogStick.transform.localPosition = Vector3.zero;
+          }
           PlayerShoot();
           goto FinishedControlManagement;
         }
@@ -186,6 +189,8 @@ public class GameManager : MonoBehaviour {
           } else {
             sideSpeedTouch = 0;
           }
+        } else {
+          sideSpeedTouch = 0;
         }
         break;
     }
@@ -332,6 +337,7 @@ public class GameManager : MonoBehaviour {
   }
 
   IEnumerator ShowGameOver() {
+    pauseButton.gameObject.SetActive(false);
     directionHelper.SetActive(false);
     virtualAnalogBase.SetActive(false);
     //Text waveName = GameManager.Instance().waveName;
@@ -419,6 +425,7 @@ public class GameManager : MonoBehaviour {
 
   public void TogglePause() {
     pauseScreen.SetActive(pauseButton.isOn);
+    virtualAnalogBase.SetActive(false);
   }
 
   public void ExitClicked() {

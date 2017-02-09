@@ -81,10 +81,10 @@ public class TitleManager : MonoBehaviour {
     float i = 0;
     while (i < 1) {
       i += Time.deltaTime;
-      Vector3 p = GameManager.QuadInterp(from, transitionPosition.position, to, i);
-      camera.transform.position = p;
+      camera.transform.position = GameManager.QuadInterp(from, transitionPosition.position, to, i);
       yield return new WaitForEndOfFrame();
     }
+    camera.transform.position = to;
     currentScreen = showMenu;
     if (!startGame) {
       currentScreen.SetActive(true);
