@@ -121,7 +121,7 @@ PlayerSettings:
     16:9: 1
     Others: 0
   bundleIdentifier: com.BustaGames.LunarTide
-  bundleVersion: 1.1
+  bundleVersion: 1.1.1
   preloadedAssets:
   - {fileID: 2800000, guid: 39b0f16bc7138264186d3c3af6bf6fa0, type: 3}
   - {fileID: 100000, guid: 2f745b0b500e2b944b33152c485c1bc9, type: 3}

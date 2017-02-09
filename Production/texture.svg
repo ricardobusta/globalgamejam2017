@@ -1204,8 +1204,8 @@
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="1570.2229"
-     inkscape:cy="450.74749"
+     inkscape:cx="1477.8707"
+     inkscape:cy="267.46176"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -5217,5 +5217,32 @@
        inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\interface.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
+    <circle
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\interface.png"
+       r="20.85965"
+       cy="920.66516"
+       cx="1455.2258"
+       id="circle4728"
+       style="opacity:1;fill:#000023;fill-opacity:1;stroke:none;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="ssssscccsc"
+       inkscape:connector-curvature="0"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1455.2268,897.09775 c -13.016,4e-5 -23.5683,10.5524 -23.5684,23.56835 -10e-5,13.01608 10.5523,23.56636 23.5684,23.56641 13.0162,1.3e-4 23.5665,-10.5502 23.5664,-23.56641 -10e-5,-13.01608 -10.5503,-23.56849 -23.5664,-23.56835 z m 0,3.74022 c 10.9501,-1.7e-4 19.8261,8.87803 19.8261,19.82813 2e-4,10.95021 -8.8759,19.82635 -19.8261,19.82618 -10.9501,-4e-5 -19.8283,-8.87609 -19.8282,-19.82618 10e-5,-10.94995 8.8782,-19.82809 19.8282,-19.82813 z"
+       id="path4730"
+       inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\interface.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="opacity:1;fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1446.3563,930.24208 c 5.1249,4.78858 13.1219,4.65744 18.0871,-0.2966 5.0852,-5.08509 5.0853,-13.32966 2e-4,-18.41494 -4.6786,-4.67214 -12.091,-5.08064 -17.2497,-1.01961 l -2.9298,-2.9297 3e-4,10.86325 10.8632,2.2e-4 -3.3575,-3.35749 c 2.5826,-1.59013 5.9727,-1.23665 8.1709,0.96154 2.5929,2.59296 2.5928,6.79691 -2e-4,9.38984 -2.5183,2.51825 -6.5761,2.59728 -9.1939,0.18254 z"
+       id="path4629-1-1"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="D:\Projects\Global-Game-Jam-2017\Assets\Sprites\interface.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       sodipodi:nodetypes="cccccccccccc" />
   </g>
 </svg>
