@@ -78,6 +78,8 @@ public class GameManager : MonoBehaviour {
 
   public RectTransform canvasTransform;
 
+  Vector3 original;
+
   public static GameManager Instance() {
     if (_instance == null) {
       _instance = FindObjectOfType<GameManager>();
@@ -108,6 +110,8 @@ public class GameManager : MonoBehaviour {
 
     directionHelper.SetActive(controlType == 2);
     virtualAnalogBase.SetActive(false);
+
+    original = camera.transform.position;
   }
 
   void Update() {
@@ -396,7 +400,6 @@ public class GameManager : MonoBehaviour {
   }
 
   IEnumerator ScreenShake() {
-    Vector3 original = camera.transform.position;
     soundManager.damageReceived.Play();
 
     float shakeEffect = 1;
