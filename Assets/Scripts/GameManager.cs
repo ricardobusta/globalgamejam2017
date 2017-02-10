@@ -388,13 +388,19 @@ public class GameManager : MonoBehaviour {
       PlayerPrefs.SetInt("PlayerScore" + i, s[i]);
     }
     PlayerPrefs.Save();
-    return GetScores(5);
+    return GetScores(5,score);
   }
 
-  static public string GetScores(int max) {
+  static public string GetScores(int max, int currentScore = -1) {
     string result = "";
+    bool printedScore = false;
     for (int i = 0; i < max; i++) {
-      result += PlayerPrefs.GetInt("PlayerScore" + (9 - i), 0).ToString("000000") + '\n';
+      int playerScore = PlayerPrefs.GetInt("PlayerScore" + (9 - i), 0);
+      bool playerCurrentScore = ((playerScore == currentScore) && !printedScore);
+      if (playerCurrentScore) {
+        printedScore = true;
+      }
+      result += (playerCurrentScore ? "<color=#ffff00>":"")+(playerScore).ToString("000000") + (playerCurrentScore ? "</color>" : "")  + '\n';
     }
     return result;
   }
