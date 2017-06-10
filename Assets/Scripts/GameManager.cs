@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-  public Camera camera;
+  public Camera cam;
   public GameObject background;
   Quaternion targetRotation;
 
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour {
     directionHelper.SetActive(controlType == 2);
     virtualAnalogBase.SetActive(false);
 
-    original = camera.transform.position;
+    original = cam.transform.position;
   }
 
   void Update() {
@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour {
             virtualAnalogStick.transform.localPosition = 30 * dir;
             PlayerDirectionControl(dir);
             player.transform.rotation = Quaternion.RotateTowards(player.transform.rotation, targetRotation, maxSpeed);
-          }else {
+          } else {
             virtualAnalogStick.transform.localPosition = Vector3.zero;
           }
           PlayerShoot();
@@ -222,7 +222,7 @@ public class GameManager : MonoBehaviour {
     story.gameObject.SetActive(true);
     float i = 0;
     Vector3 bgsize = new Vector3(2.8f, 1.4f, 1);
-    camera.orthographicSize = 0.7f * 6;
+    cam.orthographicSize = 0.7f * 6;
     background.transform.localScale = bgsize * 6;
     while (i < 1) {
       story.color = new Color(1, 1, 1, i);
@@ -246,12 +246,12 @@ public class GameManager : MonoBehaviour {
     i = 0;
     while (i < 1) {
       float l = Mathf.Lerp(6, 1, Mathf.Sin(i * Mathf.PI / 2));
-      camera.orthographicSize = 0.7f * l;
+      cam.orthographicSize = 0.7f * l;
       background.transform.localScale = bgsize * l;
       yield return new WaitForEndOfFrame();
       i += Time.deltaTime;
     }
-    camera.orthographicSize = 0.7f;
+    cam.orthographicSize = 0.7f;
     background.transform.localScale = bgsize;
     gameOver = false;
     playerHealthDisplay.SetActive(true);
@@ -388,7 +388,7 @@ public class GameManager : MonoBehaviour {
       PlayerPrefs.SetInt("PlayerScore" + i, s[i]);
     }
     PlayerPrefs.Save();
-    return GetScores(5,score);
+    return GetScores(5, score);
   }
 
   static public string GetScores(int max, int currentScore = -1) {
@@ -400,7 +400,7 @@ public class GameManager : MonoBehaviour {
       if (playerCurrentScore) {
         printedScore = true;
       }
-      result += (playerCurrentScore ? "<color=#ffff00>":"")+(playerScore).ToString("000000") + (playerCurrentScore ? "</color>" : "")  + '\n';
+      result += (playerCurrentScore ? "<color=#ffff00>" : "") + (playerScore).ToString("000000") + (playerCurrentScore ? "</color>" : "") + '\n';
     }
     return result;
   }
@@ -411,12 +411,12 @@ public class GameManager : MonoBehaviour {
     float shakeEffect = 1;
 
     while (shakeEffect > 0) {
-      camera.transform.position = (UnityEngine.Random.insideUnitSphere * (shakeEffect / 10)) + (Vector3.forward * original.z);
+      cam.transform.position = (UnityEngine.Random.insideUnitSphere * (shakeEffect / 10)) + (Vector3.forward * original.z);
       shakeEffect -= Time.deltaTime;
       yield return new WaitForEndOfFrame();
     }
 
-    camera.transform.position = original;
+    cam.transform.position = original;
   }
 
   public static IEnumerator loadSceneAsync(string scene) {

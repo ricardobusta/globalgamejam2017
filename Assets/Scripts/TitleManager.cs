@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TitleManager : MonoBehaviour {
 
-  public Camera camera;
+  public Camera cam;
 
   public Transform titlePosition;
   public Transform creditsPosition;
@@ -48,7 +48,7 @@ public class TitleManager : MonoBehaviour {
     creditsScreen.SetActive(false);
     scoreScreen.SetActive(false);
     settingsScreen.SetActive(false);
-    camera.transform.position = titlePosition.position;
+    cam.transform.position = titlePosition.position;
     currentScreen = titleScreen;
     score.text = GameManager.GetScores(10);
     soundOption.isOn = (PlayerPrefs.GetInt("muteSound", 0) == 1);
@@ -77,14 +77,14 @@ public class TitleManager : MonoBehaviour {
   IEnumerator GoToScreen(Vector3 to, GameObject showMenu, GameObject focusObject, bool startGame = false) {
     currentScreen.SetActive(false);
     buttonClick.Play();
-    Vector3 from = camera.transform.position;
+    Vector3 from = cam.transform.position;
     float i = 0;
     while (i < 1) {
       i += Time.deltaTime;
-      camera.transform.position = GameManager.QuadInterp(from, transitionPosition.position, to, i);
+      cam.transform.position = GameManager.QuadInterp(from, transitionPosition.position, to, i);
       yield return new WaitForEndOfFrame();
     }
-    camera.transform.position = to;
+    cam.transform.position = to;
     currentScreen = showMenu;
     if (!startGame) {
       currentScreen.SetActive(true);
