@@ -23,7 +23,7 @@ PlayerSettings:
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 0
   m_SplashScreenLogoStyle: 1
-  m_SplashScreenDrawMode: 1
+  m_SplashScreenDrawMode: 0
   m_SplashScreenBackgroundAnimationZoom: 1
   m_SplashScreenLogoAnimationZoom: 1
   m_SplashScreenBackgroundLandscapeAspect: 1
@@ -41,7 +41,7 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 10404, guid: 0000000000000000e000000000000000, type: 0}
+  - logo: {fileID: 21300000, guid: b3db92129dd3d34498d227837c31f842, type: 3}
     duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -121,20 +121,8 @@ PlayerSettings:
     16:10: 0
     16:9: 1
     Others: 0
-  bundleVersion: 1.2
-  preloadedAssets:
-  - {fileID: 2800000, guid: 39b0f16bc7138264186d3c3af6bf6fa0, type: 3}
-  - {fileID: 100000, guid: 2f745b0b500e2b944b33152c485c1bc9, type: 3}
-  - {fileID: 100010, guid: 7ee57f254eeddee4f91f1bb262595903, type: 3}
-  - {fileID: 2100000, guid: 8e7e2ad2c469aec4297545fc5a42baef, type: 2}
-  - {fileID: 2800000, guid: 2e108c5f1650a3c49bf137ac2d0544c5, type: 3}
-  - {fileID: 2100000, guid: a78c4868e31151a4faa2999da4ac304e, type: 2}
-  - {fileID: 2800000, guid: 3f6afe8479cd51f48beb670e89f5f7e9, type: 3}
-  - {fileID: 2800000, guid: 8f6077d5df4c70b408c59f693bcd0536, type: 3}
-  - {fileID: 2800000, guid: 80b2f969abd91254eaf26fd181c0d787, type: 3}
-  - {fileID: 100000, guid: 7231c4238eb8468439e85a14ec2822e4, type: 3}
-  - {fileID: 100002, guid: a2d226315e9b69748b67ed97b93a2d74, type: 3}
-  - {fileID: 2800000, guid: 506f68def34dc8b40ae7f74ce2f4a1be, type: 3}
+  bundleVersion: 1.3
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -174,7 +162,7 @@ PlayerSettings:
     tvOS: com.BustaGames.LunarTide
   buildNumber:
     iOS: 0
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 27
   AndroidPreferredInstallLocation: 1
@@ -289,39 +277,9 @@ PlayerSettings:
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
-    - m_Textures: []
-      m_Width: 192
-      m_Height: 192
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 144
-      m_Height: 144
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 96
-      m_Height: 96
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 72
-      m_Height: 72
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 48
-      m_Height: 48
-      m_Kind: 0
-      m_SubKind: 
-    - m_Textures: []
-      m_Width: 36
-      m_Height: 36
-      m_Kind: 0
-      m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 2ed12214a5945f7469e8e46e1d730c40, type: 3}
-      - {fileID: 0}
+      - {fileID: 2800000, guid: f15544dce939bf24f9a8c23d25f6c62e, type: 3}
+      - {fileID: 2800000, guid: a7edfca4758830148aa437f288f00479, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
@@ -386,6 +344,42 @@ PlayerSettings:
       m_Width: 36
       m_Height: 36
       m_Kind: 1
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 2800000, guid: 71618eacb533267409aec43723306881, type: 3}
+      m_Width: 192
+      m_Height: 192
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 144
+      m_Height: 144
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 96
+      m_Height: 96
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 72
+      m_Height: 72
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 48
+      m_Height: 48
+      m_Kind: 0
+      m_SubKind: 
+    - m_Textures:
+      - {fileID: 0}
+      m_Width: 36
+      m_Height: 36
+      m_Kind: 0
       m_SubKind: 
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
@@ -683,7 +677,7 @@ PlayerSettings:
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
   additionalIl2CppArgs: 
-  scriptingRuntimeVersion: 0
+  scriptingRuntimeVersion: 1
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
@@ -755,7 +749,7 @@ PlayerSettings:
   cloudServicesEnabled:
     UNet: 1
   facebookSdkVersion: 7.9.1
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: 4228200d-2852-4b2b-9de7-da30ac1e7b48
   projectName: Global-Game-Jam-2017
   organizationId: busta-games
