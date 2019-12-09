@@ -1,4 +1,6 @@
-﻿/* ***************************************************************************
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+/* ***************************************************************************
      Adapted shader from: Makin' Stuff Look Good With Unity (Youtube Channel)
 	 Link: https://www.youtube.com/watch?v=C6lGEgcHbWc
 
@@ -70,7 +72,7 @@ Shader "GGJ2017/GlowShield"
 			v2f vert (appdata v)
 			{
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				o.crackedUV = TRANSFORM_TEX(v.uv, _CrackedTex);
 
